@@ -1,0 +1,93 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #fcfcfc;
+    color: #333;
+}
+
+header {
+    background-color: #e62e2e; /* Card Red */
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+header h1 { font-size: 3rem; letter-spacing: 2px; }
+
+.contact-highlight {
+    background: #fff;
+    text-align: center;
+    padding: 30px 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.whatsapp-btn {
+    background-color: #25D366;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+    transform: translateY(-3px);
+}
+
+.promo-section { text-align: center; margin: 30px 0; }
+
+.discount-badge {
+    background-color: #ffcc00; /* Card Yellow */
+    color: #000;
+    display: inline-block;
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    border: 3px dashed #000;
+    border-radius: 15px;
+    transform: rotate(-2deg);
+}
+
+.container { width: 90%; max-width: 1100px; margin: auto; }
+
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    flex: 1;
+    min-width: 300px;
+    border-top: 5px solid #e62e2e;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    border-radius: 0 0 10px 10px;
+}
+
+.service-card h3 { color: #e62e2e; margin-bottom: 20px; font-size: 1.5rem; }
+
+ul { list-style: none; }
+ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+ul li::before { content: "✓ "; color: #25D366; font-weight: bold; }
+
+footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
