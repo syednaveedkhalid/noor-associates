@@ -14,116 +14,57 @@
             --gold: #FFD700;
             --whatsapp-green: #25D366;
             --light-bg: #F8F9FA;
-            --text-dark: #2C3E50;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); color: #2C3E50; line-height: 1.6; }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--text-dark);
-            line-height: 1.6;
-            background-color: var(--light-bg);
-        }
-
-        .top-bar {
-            background: var(--dark-blue);
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
+        .top-bar { background: var(--dark-blue); color: white; padding: 10px 0; text-align: center; font-size: 0.9rem; font-weight: 500; }
 
         header {
             background: linear-gradient(135deg, var(--primary-red) 0%, #8B0000 100%);
-            color: white;
-            padding: 60px 20px 100px;
-            text-align: center;
-            border-bottom: 5px solid var(--gold);
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+            color: white; padding: 60px 20px 100px; text-align: center;
+            border-bottom: 5px solid var(--gold); clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
         }
 
-        .hero-title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 2.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
+        .hero-title { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 2.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .urdu-brand { font-family: 'Noto Nastaliq Urdu', serif; font-size: 3rem; color: var(--gold); margin: 15px 0; }
 
-        .urdu-brand {
-            font-family: 'Noto Nastaliq Urdu', serif;
-            font-size: 3rem;
-            color: var(--gold);
-            margin: 15px 0;
-        }
-
-        .section-container {
-            max-width: 1200px;
-            margin: -60px auto 50px;
-            padding: 0 20px;
-        }
+        .section-container { max-width: 1200px; margin: -60px auto 50px; padding: 0 20px; }
 
         .location-section {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 40px;
-            overflow: hidden;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 40px; overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             border-bottom: 5px solid var(--primary-red);
         }
 
-        .address-info { padding: 40px; }
+        .address-info { padding: 40px; background: white; }
+        .address-info h2 { color: var(--primary-red); margin-bottom: 15px; }
 
-        /* Map Fix */
-        .map-box { min-height: 350px; width: 100%; }
-        .map-box iframe { width: 100%; height: 100%; border: 0; }
+        .map-box { background: #eee; min-height: 350px; position: relative; }
+        .map-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
         .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-            max-width: 1100px;
-            margin: 20px auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px; max-width: 1100px; margin: 20px auto;
         }
 
         .contact-card {
-            background: #fff;
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid #eee;
-            border-top: 5px solid var(--primary-red);
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            background: #fff; padding: 25px; border-radius: 12px; border: 1px solid #eee;
+            border-top: 5px solid var(--primary-red); text-align: center;
+            transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
-        .contact-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-            border-top-color: var(--dark-blue);
-        }
+        .contact-card:hover { transform: translateY(-12px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); border-top-color: var(--dark-blue); }
 
-        .contact-card strong { color: var(--dark-blue); display: block; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 5px; }
-        .contact-card h4 { margin: 5px 0 15px 0; font-size: 1.3rem; color: #333; }
-        
+        .contact-card strong { color: var(--dark-blue); display: block; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 5px; letter-spacing: 0.5px; }
+
         .whatsapp-link-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--whatsapp-green);
-            color: white;
-            padding: 10px 15px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.95rem;
-            transition: 0.3s;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: var(--whatsapp-green); color: white; padding: 10px 20px;
+            border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; transition: 0.3s;
         }
-
-        .whatsapp-link-btn:hover { background: #128C7E; }
+        .whatsapp-link-btn:hover { background: #128C7E; transform: scale(1.05); }
 
         footer { background: #1A1A1A; color: #999; padding: 40px 20px; text-align: center; margin-top: 60px; }
     </style>
@@ -142,17 +83,16 @@
     <div class="section-container">
         <div class="location-section">
             <div class="address-info">
-                <h2 style="color: var(--primary-red); margin-bottom: 15px;">📍 Office Location</h2>
+                <h2>📍 Office Location</h2>
                 <p><strong>Suite M-65, Munir Shoppers Paradise,</strong></p>
                 <p>Block-17, Gulistan-e-Johar, Karachi.</p>
                 <p style="color: var(--primary-red); font-weight: bold; margin-top: 10px;">Near Perfume Chowk</p>
             </div>
             <div class="map-box">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.330883398939!2d67.127815!3d24.9122553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f38f6b7d34d%3A0x53e2da912e9678ed!2sMunir%20Shoppers%20Paradise!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.123456789!2d67.123456789!3d24.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338e5e78b7787%3A0x53e2da792e9798ed!2sMunir%20Shoppers%20Paradise!5e0!3m2!1sen!2spk!4v1710500000000!5m2!1sen!2spk" 
                     allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
+                    loading="lazy">
                 </iframe>
             </div>
         </div>
@@ -164,15 +104,15 @@
                 <strong>Main Support</strong>
                 <h4>Naveed</h4>
                 <a href="https://wa.me/923340207222" class="whatsapp-link-btn" target="_blank">
-                    <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp Chat
+                    <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp
                 </a>
             </div>
 
             <div class="contact-card">
-                <strong>Corporate Advisor</strong>
+                <strong>Tax Advisor</strong>
                 <h4>Uzair</h4>
                 <a href="https://wa.me/923312999202" class="whatsapp-link-btn" target="_blank">
-                    <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp Chat
+                    <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp
                 </a>
             </div>
 
@@ -180,15 +120,15 @@
                 <strong>Senior Partner</strong>
                 <h4>Liaquat Ali</h4>
                 <a href="https://wa.me/923014789681" class="whatsapp-link-btn" target="_blank">
-                    <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp Chat
+                    <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp
                 </a>
             </div>
 
             <div class="contact-card">
-                <strong>Tax Consultant</strong>
+                <strong>Senior Tax Advisor</strong>
                 <h4>Saleem Shaikh</h4>
                 <a href="https://wa.me/923463134415" class="whatsapp-link-btn" target="_blank">
-                    <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp Chat
+                    <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp
                 </a>
             </div>
         </div>
