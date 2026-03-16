@@ -41,20 +41,18 @@
         }
 
         .service-card-main {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border-top: 6px solid var(--dark-blue);
+            background: white; padding: 30px; border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-top: 6px solid var(--dark-blue);
             transition: 0.3s;
         }
 
-        .service-card-main:hover { transform: scale(1.02); }
+        .service-card-main:hover { transform: translateY(-5px); }
         .service-card-main h3 { color: var(--primary-red); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
         .service-card-main ul { list-style: none; }
-        .service-card-main ul li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; font-size: 0.95rem; }
-        .service-card-main ul li i { color: var(--gold); font-size: 0.8rem; }
+        .service-card-main ul li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .service-card-main ul li i { color: var(--gold); }
 
+        /* FIXED MAP SECTION */
         .location-section {
             background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             margin-bottom: 40px; overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -62,8 +60,8 @@
         }
 
         .address-info { padding: 40px; }
-        .map-box { background: #eee; min-height: 350px; position: relative; }
-        .map-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .map-box { min-height: 400px; width: 100%; background: #e5e3df; }
+        .map-box iframe { width: 100%; height: 100%; border: 0; display: block; }
 
         .contact-container {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -77,6 +75,7 @@
         }
 
         .contact-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+        .contact-card strong { color: var(--dark-blue); display: block; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 5px; }
 
         .whatsapp-link-btn {
             display: inline-flex; align-items: center; justify-content: center;
@@ -104,25 +103,25 @@
             <div class="service-card-main">
                 <h3><i class="fas fa-id-card"></i> Registrations</h3>
                 <ul>
-                    <li><i class="fas fa-check"></i> Company & GST Registration</li>
-                    <li><i class="fas fa-check"></i> SRB, PRA, KPRA, BRA</li>
-                    <li><i class="fas fa-check"></i> Trade Mark & Chamber</li>
+                    <li><i class="fas fa-check-circle"></i> Company & GST Registration</li>
+                    <li><i class="fas fa-check-circle"></i> SRB, PRA, KPRA, BRA</li>
+                    <li><i class="fas fa-check-circle"></i> Trade Mark & Chamber</li>
                 </ul>
             </div>
             <div class="service-card-main">
                 <h3><i class="fas fa-file-invoice-dollar"></i> Import / Export</h3>
                 <ul>
-                    <li><i class="fas fa-check"></i> Documentation & Licensing</li>
-                    <li><i class="fas fa-check"></i> Custom Rebate & DLTL</li>
-                    <li><i class="fas fa-check"></i> SECP Compliance</li>
+                    <li><i class="fas fa-check-circle"></i> Documentation & Licensing</li>
+                    <li><i class="fas fa-check-circle"></i> Custom Rebate & DLTL</li>
+                    <li><i class="fas fa-check-circle"></i> SECP Compliance</li>
                 </ul>
             </div>
             <div class="service-card-main">
                 <h3><i class="fas fa-chart-line"></i> Tax Advisory</h3>
                 <ul>
-                    <li><i class="fas fa-check"></i> Income Tax Filing (IRIS 3.0)</li>
-                    <li><i class="fas fa-check"></i> Sales Tax Returns</li>
-                    <li><i class="fas fa-check"></i> Financial Auditing</li>
+                    <li><i class="fas fa-check-circle"></i> Income Tax Filing (IRIS 3.0)</li>
+                    <li><i class="fas fa-check-circle"></i> Sales Tax Returns</li>
+                    <li><i class="fas fa-check-circle"></i> Financial Auditing</li>
                 </ul>
             </div>
         </div>
@@ -135,7 +134,7 @@
                 <p style="color: var(--primary-red); font-weight: bold; margin-top: 10px;">Near Perfume Chowk</p>
             </div>
             <div class="map-box">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.1234!2d67.1234!3d24.1234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDA3JzM0LjIiTiA2N8KwMDcnMjQuMiJF!5e0!3m2!1sen!2spk!4v17000000000002" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.123456789!2d67.1234567!3d24.1234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338df377f34d1%3A0x29e277912e7598ed!2sMunir%20Shopper's%20Paradise!5e0!3m2!1sen!2spk!4v1710595200000!5m2!1sen!2spk" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
 
