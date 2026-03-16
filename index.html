@@ -60,24 +60,6 @@
             filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
         }
 
-        .discount-tag {
-            background: var(--gold);
-            color: black;
-            display: inline-block;
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-weight: 700;
-            margin-top: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
         .section-container {
             max-width: 1200px;
             margin: -60px auto 50px;
@@ -95,95 +77,40 @@
             border-bottom: 5px solid var(--primary-red);
         }
 
-        .address-info {
-            padding: 40px;
-            background: #fff;
-        }
-
+        .address-info { padding: 40px; background: #fff; }
         .address-info h2 { color: var(--primary-red); margin-bottom: 20px; font-family: 'Montserrat', sans-serif; }
-
-        .address-info p { font-size: 1.1rem; margin-bottom: 15px; color: var(--text-dark); }
-
         .map-box iframe { width: 100%; height: 100%; min-height: 300px; border: 0; }
 
-        .services-wrapper {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-        }
-
-        .service-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: 0.3s;
-            border-top: 6px solid var(--dark-blue);
-        }
-
-        .service-card h3 { color: var(--primary-red); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-
         .cta-section { background: white; padding: 60px 20px; text-align: center; }
-
         .brand-footer-name { font-family: 'Montserrat', sans-serif; font-size: 3rem; font-weight: 900; color: var(--dark-blue); }
 
-        .naveed-contact {
+        /* Updated Contact Card for Better Visibility */
+        .contact-box-main {
             background: #E3F2FD;
             display: inline-block;
-            padding: 25px 50px;
-            border-radius: 10px;
+            padding: 30px;
+            border-radius: 15px;
             margin-top: 20px;
             border: 2px solid var(--dark-blue);
+            text-align: left;
+            min-width: 320px;
         }
+
+        .contact-box-main h4 { color: var(--primary-red); font-size: 1.4rem; margin-bottom: 15px; text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
+        
+        .contact-item { margin-bottom: 15px; }
+        .contact-item strong { display: block; color: var(--dark-blue); font-size: 0.9rem; text-transform: uppercase; }
+        .contact-link { color: #333; font-weight: bold; text-decoration: none; font-size: 1.3rem; display: block; }
 
         .whatsapp-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-            text-decoration: none;
-            z-index: 999;
+            position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3); text-decoration: none; z-index: 999;
         }
 
-        footer {
-            background: #1A1A1A;
-            color: #999;
-            padding: 50px 20px 20px;
-            text-align: center;
-        }
-
-        .contact-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .contact-pill {
-            background: #2A2A2A;
-            padding: 15px 25px;
-            border-radius: 8px;
-            color: white;
-            min-width: 220px;
-            border-left: 3px solid var(--primary-red);
-        }
-
-        .contact-pill span { color: var(--gold); display: block; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 5px; }
-
-        @media (max-width: 768px) {
-            .hero-title { font-size: 1.5rem; }
-            .location-section { grid-template-columns: 1fr; }
-        }
+        footer { background: #1A1A1A; color: #999; padding: 40px 20px; text-align: center; }
+        .footer-contacts { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 20px; }
+        .pill { background: #2A2A2A; padding: 10px 20px; border-radius: 5px; color: white; border-left: 3px solid var(--gold); }
     </style>
 </head>
 <body>
@@ -199,62 +126,44 @@
     <header>
         <h1 class="hero-title">TAX. ACCOUNTING. BPO. ADVISORY</h1>
         <div class="urdu-brand">سیل اینڈ انکم ٹیکس</div>
-        <div class="discount-tag">
-            <i class="fas fa-percentage"></i> FLAT 25% - 30% OFF ON ALL SERVICES
-        </div>
     </header>
 
     <div class="section-container">
         <div class="location-section">
             <div class="address-info">
-                <h2>📍 Visit Our Office</h2>
+                <h2>📍 Office Location</h2>
                 <p><strong>Suite M-65, Munir Shoppers Paradise,</strong></p>
                 <p>Block-17, Gulistan-e-Johar, Karachi.</p>
                 <p style="color: var(--primary-red); font-weight: bold;">Near Perfume Chowk</p>
-                <p><i class="fas fa-clock"></i> Mon - Sat (10:00 AM - 07:00 PM)</p>
             </div>
             <div class="map-box">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.123456789!2d67.123456789!3d24.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338df377f3377%3A0x67e2db992e2fb8ed!2sMunir%20Shoppers%20Paradise!5e0!3m2!1sen!2spk!4v1710500000000!5m2!1sen!2spk" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </div>
-
-        <div class="services-wrapper">
-            <div class="service-card">
-                <h3><i class="fas fa-id-card"></i> Registrations</h3>
-                <ul style="list-style: none;">
-                    <li><i class="fas fa-chevron-right" style="color: var(--gold); margin-right: 10px;"></i> Company & GST Registration</li>
-                    <li><i class="fas fa-chevron-right" style="color: var(--gold); margin-right: 10px;"></i> SRB, PRA, KPRA, BRA</li>
-                    <li><i class="fas fa-chevron-right" style="color: var(--gold); margin-right: 10px;"></i> Trade Mark & Chamber</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <h3><i class="fas fa-file-invoice-dollar"></i> Import / Export</h3>
-                <ul style="list-style: none;">
-                    <li><i class="fas fa-chevron-right" style="color: var(--gold); margin-right: 10px;"></i> Documentation & Licensing</li>
-                    <li><i class="fas fa-chevron-right" style="color: var(--gold); margin-right: 10px;"></i> Custom Rebate & DLTL</li>
-                    <li><i class="fas fa-chevron-right" style="color: var(--gold); margin-right: 10px;"></i> SECP Compliance</li>
-                </ul>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.1234!2d67.1234!3d24.1234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338df3f793b5d%3A0xc3911c0f757f4951!2sMunir%20Shoppers%20Paradise!5e0!3m2!1sen!2spk!4v1647420000000!5m2!1sen!2spk" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </div>
 
     <section class="cta-section">
         <h2 class="brand-footer-name">NOOR ASSOCIATES</h2>
-        <div class="naveed-contact">
-            <h4>Contact Person: Naveed</h4>
-            <p>Direct Support & Consultancy</p>
-            <a href="tel:03340207222" style="color: var(--dark-blue); font-weight: bold; text-decoration: none; font-size: 1.5rem;">
-                <i class="fas fa-phone"></i> 0334-0207222
-            </a>
+        
+        <div class="contact-box-main">
+            <h4>Contact Support</h4>
+            
+            <div class="contact-item">
+                <strong>Contact Person (Naveed)</strong>
+                <a href="tel:03340207222" class="contact-link"><i class="fas fa-phone"></i> 0334-0207222</a>
+            </div>
+
+            <div class="contact-item">
+                <strong>Corporate Advisor (Uzair)</strong>
+                <a href="tel:03312999202" class="contact-link"><i class="fas fa-phone"></i> 0331-2999202</a>
+            </div>
         </div>
     </section>
 
     <footer>
-        <div class="contact-grid">
-            <div class="contact-pill"><span>Senior Partner</span> Liaquat Ali: 0301-4789681</div>
-            <div class="contact-pill"><span>Tax Consultant</span> Saleem Shaikh: 0346-3134415</div>
-            <div class="contact-pill" style="border-left-color: #25D366;"><span>WhatsApp Expert</span> Naveed: 0334-0207222</div>
-            <div class="contact-pill" style="border-left-color: var(--gold);"><span>Corporate Advisor</span> Uzair: 0331-2999202</div>
+        <div class="footer-contacts">
+            <div class="pill">Liaquat Ali: 0301-4789681</div>
+            <div class="pill">Saleem Shaikh: 0346-3134415</div>
         </div>
         <p>© 2026 Noor Associates - Suite M-65, Gulistan-e-Johar, Karachi.</p>
     </footer>
