@@ -32,9 +32,10 @@
 
         .section-container { max-width: 1200px; margin: -60px auto 50px; padding: 0 20px; }
 
+        /* Services Grid */
         .services-wrapper {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px; margin-bottom: 50px;
+            gap: 25px; margin-bottom: 60px;
         }
 
         .service-card-main {
@@ -47,6 +48,28 @@
         .service-card-main ul li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
         .service-card-main ul li i { color: var(--gold); }
 
+        /* NEW: Why Choose Us Section */
+        .why-choose-us {
+            background: var(--dark-blue);
+            color: white;
+            padding: 50px 20px;
+            border-radius: 20px;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .why-item i { font-size: 2.5rem; color: var(--gold); margin-bottom: 15px; }
+        .why-item h4 { font-size: 1.2rem; margin-bottom: 10px; }
+        .why-item p { font-size: 0.9rem; opacity: 0.8; }
+
+        /* Location Section */
         .location-section {
             background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             margin-bottom: 40px; overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -54,11 +77,10 @@
         }
 
         .address-info { padding: 40px; }
-        
-        /* Map Area Fix */
         .map-box { min-height: 400px; width: 100%; background: #eee; }
         .map-box iframe { width: 100%; height: 100%; border: 0; display: block; }
 
+        /* Expert Cards */
         .contact-container {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px; max-width: 1100px; margin: 20px auto;
@@ -70,7 +92,6 @@
             transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
         .contact-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
-        .contact-card strong { color: var(--dark-blue); display: block; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 5px; }
 
         .whatsapp-link-btn {
             display: inline-flex; align-items: center; justify-content: center;
@@ -121,6 +142,33 @@
             </div>
         </div>
 
+        <div class="why-choose-us">
+            <h2 style="font-family: 'Montserrat', sans-serif;">Why Choose Noor Associates?</h2>
+            <p>Reliable Financial Solutions for Your Business Growth</p>
+            <div class="why-grid">
+                <div class="why-item">
+                    <i class="fas fa-user-tie"></i>
+                    <h4>Certified Experts</h4>
+                    <p>Qualified consultants for FBR & SECP matters.</p>
+                </div>
+                <div class="why-item">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h4>Affordable Rates</h4>
+                    <p>Premium advisory services at competitive prices.</p>
+                </div>
+                <div class="why-item">
+                    <i class="fas fa-lock"></i>
+                    <h4>Confidentiality</h4>
+                    <p>Your financial data is 100% secure with us.</p>
+                </div>
+                <div class="why-item">
+                    <i class="fas fa-headset"></i>
+                    <h4>Quick Support</h4>
+                    <p>Direct WhatsApp access to our senior experts.</p>
+                </div>
+            </div>
+        </div>
+
         <div class="location-section">
             <div class="address-info">
                 <h2 style="color: var(--primary-red);">📍 Office Location</h2>
@@ -129,12 +177,7 @@
                 <p style="color: var(--primary-red); font-weight: bold; margin-top: 10px;">Near Perfume Chowk</p>
             </div>
             <div class="map-box">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.330873523193!2d67.12658827537302!3d24.919034677894376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338c0f6bb343d%3A0x53e2db912ebdb7ed!2sMunir%20Shoppers%20Paradise!5e0!3m2!1sen!2s!4v1710000000000!5m2!1sen!2s" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.146604169558!2d67.12836267503794!3d24.910014042578586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338d0f6b4d43d%3A0x53e2da912e9d98ed!2sMunir%20Shoppers%20Paradise!5e0!3m2!1sen!2s!4v1710500000000!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
 
