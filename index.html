@@ -3,52 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noor Associates | Tax & Accounting</title>
+    <title>Noor Associates | Tax & Accounting Advisory</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; text-align: center; }
-        .container { max-width: 900px; margin: 20px auto; background: white; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px; }
-        .banner img { width: 100%; height: auto; border-radius: 5px; margin-bottom: 20px; }
-        h1 { color: #d32f2f; margin-bottom: 5px; }
-        .contact-box { background: #d32f2f; color: white; padding: 20px; margin-top: 20px; border-radius: 5px; }
-        .contact-box h3 { margin-top: 0; text-decoration: underline; }
-        .contact-box p { margin: 8px 0; font-size: 1.1em; border-bottom: 1px dashed rgba(255,255,255,0.3); padding-bottom: 5px; }
-        .services-list { text-align: left; display: inline-block; margin: 20px 0; padding: 0 20px; }
-        .services-list ul { columns: 2; -webkit-columns: 2; -moz-columns: 2; list-style-position: inside; }
-        li { margin-bottom: 10px; color: #333; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; text-align: center; }
+        .container { max-width: 1000px; margin: 20px auto; background: white; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 10px; }
+        .banner img { width: 100%; height: auto; border-radius: 8px; margin-bottom: 25px; border: 1px solid #ddd; }
+        h1 { color: #d32f2f; font-size: 2.5em; margin-bottom: 10px; }
+        
+        /* Services Section */
+        .services-section { background: #fff; padding: 20px; border-top: 3px solid #d32f2f; margin-top: 20px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: left; padding: 15px; }
+        .service-card { background: #fdfdfd; padding: 15px; border: 1px solid #eee; border-radius: 5px; }
+        .service-card h4 { margin-top: 0; color: #d32f2f; }
+
+        /* Map Section */
+        .map-container { margin-top: 30px; padding: 20px; background: #eee; border-radius: 8px; }
+        iframe { width: 100%; height: 300px; border: 0; border-radius: 8px; }
+
+        /* Footer & Contact */
+        footer { background: #2c3e50; color: white; padding: 40px 20px; margin-top: 40px; text-align: left; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1000px; margin: auto; }
+        .footer-col h3 { border-bottom: 2px solid #d32f2f; display: inline-block; padding-bottom: 5px; margin-bottom: 15px; }
+        .footer-col p { margin: 8px 0; font-size: 0.95em; line-height: 1.6; }
+        .contact-highlight { color: #ffeb3b; font-weight: bold; }
+        .copyright { text-align: center; margin-top: 30px; font-size: 0.8em; opacity: 0.7; border-top: 1px solid #444; padding-top: 20px; }
     </style>
 </head>
 <body>
 
     <div class="container">
         <h1>NOOR ASSOCIATES</h1>
-        <p>Expert Tax, Accounting, BPO & Advisory Services</p>
+        <p>Tax, Accounting, BPO & Advisory Services</p>
 
         <div class="banner">
-            <img src="main-image.jpg" alt="Noor Associates Poster">
+            <img src="main-image.jpg" alt="Noor Associates Official Poster">
         </div>
 
-        <div class="services-list">
-            <h3>Our Core Services:</h3>
-            <ul>
-                <li>Company Registration</li>
-                <li>SRB, PRA, KPRA, BRA</li>
-                <li>Income Tax & Sales Tax</li>
-                <li>Import & Export Documentation</li>
-                <li>SECP Compliance</li>
-                <li>Trade Mark Registration</li>
-                <li>Chamber Registration</li>
-                <li>Custom Rebate & DLTL</li>
-            </ul>
+        <div class="services-section">
+            <h3>Our Specialized Services</h3>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h4>Registration</h4>
+                    <p>Company, SRB, PRA, KPRA, BRA, Chamber & Trade Mark.</p>
+                </div>
+                <div class="service-card">
+                    <h4>Taxation</h4>
+                    <p>Income Tax & Sales Tax Returns, FBR Compliance.</p>
+                </div>
+                <div class="service-card">
+                    <h4>Import/Export</h4>
+                    <p>Documentation, License, Custom Rebate & DLTL.</p>
+                </div>
+                <div class="service-card">
+                    <h4>Corporate</h4>
+                    <p>SECP Compliance, Accounting & Audit Support.</p>
+                </div>
+            </div>
         </div>
 
-        <div class="contact-box">
-            <h3>Contact for Professional Advice:</h3>
-            <p><strong>Contact Person (Naveed):</strong> 0334-0207222</p>
-            <p><strong>Liaquat Ali:</strong> 0301-4789681</p>
-            <p><strong>Saleem Shaikh:</strong> 0346-3134415</p>
-            <p><strong>Uzair:</strong> 0331-2999202</p>
+        <div class="map-container">
+            <h3>Find Us on Google Maps</h3>
+            <p>Near Perfume Chowk, Gulistan-e-Johar</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.332346743956!2d67.1246329745118!3d24.92078654284954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338c0f6bb343d%3A0x53e2db912eb998ed!2sMunir%20Shoppers%20Paradise!5e0!3m2!1sen!2s!4v1709000000000!5m2!1sen!2s" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Office Address</h3>
+
+http://googleusercontent.com/map_location_reference/1
+                <p>Suite M-65, [Munir Shoppers Paradise](http://googleusercontent.com/map_location_reference/0)<br>
+                Block-17, Gulistan-e-Johar, Karachi.<br>
+                <strong>Landmark:</strong> Near Perfume Chowk</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Persons</h3>
+                <p><strong>Naveed:</strong> <span class="contact-highlight">0334-0207222</span></p>
+                <p><strong>Liaquat Ali:</strong> 0301-4789681</p>
+                <p><strong>Saleem Shaikh:</strong> 0346-3134415</p>
+                <p><strong>Uzair:</strong> 0331-2999202</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Noor Associates. All Rights Reserved.
+        </div>
+    </footer>
 
 </body>
 </html>
