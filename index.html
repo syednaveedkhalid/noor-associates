@@ -78,56 +78,60 @@
         .address-info { padding: 40px; }
         .map-box iframe { width: 100%; height: 100%; min-height: 300px; border: 0; }
 
-        .cta-section { background: white; padding: 60px 20px; text-align: center; }
-        .brand-footer-name { font-family: 'Montserrat', sans-serif; font-size: 3rem; font-weight: 900; color: var(--dark-blue); margin-bottom: 20px; }
-
-        /* CONTACT CARDS WITH WHATSAPP LINK */
         .contact-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 20px auto;
         }
 
+        /* Unified Card Style for all Partners */
         .contact-card {
             background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid #ddd;
-            border-left: 5px solid var(--primary-red);
-            text-align: left;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+            border-top: 5px solid var(--primary-red);
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        /* Hover Effect for ALL cards */
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+            border-top-color: var(--dark-blue);
+        }
+
+        .contact-card strong { color: var(--dark-blue); display: block; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 5px; }
+        .contact-card h4 { margin: 5px 0 15px 0; font-size: 1.3rem; color: #333; }
+        
+        .whatsapp-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--whatsapp-green);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
             transition: 0.3s;
         }
 
-        .contact-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-
-        .contact-card strong { color: var(--dark-blue); display: block; font-size: 0.8rem; text-transform: uppercase; }
-        .contact-card h4 { margin: 5px 0; font-size: 1.2rem; }
-        
-        .whatsapp-link {
-            display: inline-flex;
-            align-items: center;
-            background: var(--whatsapp-green);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 10px;
-            font-size: 0.9rem;
-        }
-
-        .whatsapp-link i { margin-right: 8px; font-size: 1.1rem; }
+        .whatsapp-link i { margin-right: 10px; font-size: 1.2rem; }
         .whatsapp-link:hover { background: #128C7E; }
 
-        footer { background: #1A1A1A; color: #999; padding: 40px 20px; text-align: center; margin-top: 40px; }
+        footer { background: #1A1A1A; color: #999; padding: 40px 20px; text-align: center; margin-top: 60px; }
     </style>
 </head>
 <body>
 
     <div class="top-bar">
-        <i class="fas fa-check-circle"></i> FBR & SECP Authorized Consultants
+        <i class="fas fa-check-circle"></i> FBR & SECP Authorized Consultants | Noor Associates
     </div>
 
     <header>
@@ -135,7 +139,7 @@
         <div class="urdu-brand">سیل اینڈ انکم ٹیکس</div>
     </header>
 
-    <div class="container section-container">
+    <div class="section-container">
         <div class="location-section">
             <div class="address-info">
                 <h2 style="color: var(--primary-red); margin-bottom: 15px;">📍 Office Location</h2>
@@ -144,18 +148,18 @@
                 <p style="color: var(--primary-red); font-weight: bold;">Near Perfume Chowk</p>
             </div>
             <div class="map-box">
-                <iframe src="http://googleusercontent.com/maps.google.com/8" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNJeXFmc1lREAE!2m1!1s0x3eb339c0f6bb343d:0x53e2db912ebd98ed" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
 
-        <h2 style="text-align: center; color: var(--dark-blue); margin-bottom: 20px;">Contact Our Experts</h2>
+        <h2 style="text-align: center; color: var(--dark-blue); margin-bottom: 30px; font-family: 'Montserrat', sans-serif;">OUR EXPERT CONSULTANTS</h2>
         
         <div class="contact-container">
             <div class="contact-card">
                 <strong>Main Support</strong>
                 <h4>Naveed</h4>
                 <a href="https://wa.me/923340207222" class="whatsapp-link" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    <i class="fab fa-whatsapp"></i> WhatsApp Chat
                 </a>
             </div>
 
@@ -163,7 +167,7 @@
                 <strong>Corporate Advisor</strong>
                 <h4>Uzair</h4>
                 <a href="https://wa.me/923312999202" class="whatsapp-link" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    <i class="fab fa-whatsapp"></i> WhatsApp Chat
                 </a>
             </div>
 
@@ -171,7 +175,7 @@
                 <strong>Senior Partner</strong>
                 <h4>Liaquat Ali</h4>
                 <a href="https://wa.me/923014789681" class="whatsapp-link" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    <i class="fab fa-whatsapp"></i> WhatsApp Chat
                 </a>
             </div>
 
@@ -179,15 +183,16 @@
                 <strong>Tax Consultant</strong>
                 <h4>Saleem Shaikh</h4>
                 <a href="https://wa.me/923463134415" class="whatsapp-link" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    <i class="fab fa-whatsapp"></i> WhatsApp Chat
                 </a>
             </div>
         </div>
     </div>
 
     <footer>
-        <h2 style="color: white; margin-bottom: 10px;">NOOR ASSOCIATES</h2>
-        <p>© 2026 Noor Associates - Suite M-65, Gulistan-e-Johar, Karachi.</p>
+        <h2 style="color: white; margin-bottom: 10px; font-family: 'Montserrat', sans-serif;">NOOR ASSOCIATES</h2>
+        <p>Providing Financial Excellence Since 2026</p>
+        <p style="margin-top: 15px; font-size: 0.8rem;">© 2026 Noor Associates - Suite M-65, Gulistan-e-Johar, Karachi.</p>
     </footer>
 
 </body>
