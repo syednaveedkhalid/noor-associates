@@ -32,27 +32,21 @@
 
         .section-container { max-width: 1200px; margin: -60px auto 50px; padding: 0 20px; }
 
-        /* Services Grid */
         .services-wrapper {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-            margin-bottom: 50px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px; margin-bottom: 50px;
         }
 
         .service-card-main {
             background: white; padding: 30px; border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-top: 6px solid var(--dark-blue);
-            transition: 0.3s;
         }
 
-        .service-card-main:hover { transform: translateY(-5px); }
         .service-card-main h3 { color: var(--primary-red); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
         .service-card-main ul { list-style: none; }
         .service-card-main ul li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
         .service-card-main ul li i { color: var(--gold); }
 
-        /* FIXED MAP SECTION */
         .location-section {
             background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             margin-bottom: 40px; overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -60,7 +54,9 @@
         }
 
         .address-info { padding: 40px; }
-        .map-box { min-height: 400px; width: 100%; background: #e5e3df; }
+        
+        /* Map Area Fix */
+        .map-box { min-height: 400px; width: 100%; background: #eee; }
         .map-box iframe { width: 100%; height: 100%; border: 0; display: block; }
 
         .contact-container {
@@ -73,7 +69,6 @@
             border-top: 5px solid var(--primary-red); text-align: center;
             transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
-
         .contact-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
         .contact-card strong { color: var(--dark-blue); display: block; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 5px; }
 
@@ -134,11 +129,16 @@
                 <p style="color: var(--primary-red); font-weight: bold; margin-top: 10px;">Near Perfume Chowk</p>
             </div>
             <div class="map-box">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.123456789!2d67.1234567!3d24.1234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338df377f34d1%3A0x29e277912e7598ed!2sMunir%20Shopper's%20Paradise!5e0!3m2!1sen!2spk!4v1710595200000!5m2!1sen!2spk" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.330873523193!2d67.12658827537302!3d24.919034677894376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338c0f6bb343d%3A0x53e2db912ebdb7ed!2sMunir%20Shoppers%20Paradise!5e0!3m2!1sen!2s!4v1710000000000!5m2!1sen!2s" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </div>
 
-        <h2 style="text-align: center; color: var(--dark-blue); margin-bottom: 30px; font-family: 'Montserrat', sans-serif;">OUR EXPERT CONSULTANTS</h2>
+        <h2 style="text-align: center; color: var(--dark-blue); margin-bottom: 30px;">OUR EXPERT CONSULTANTS</h2>
         
         <div class="contact-container">
             <div class="contact-card">
