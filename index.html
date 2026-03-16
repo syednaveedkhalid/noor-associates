@@ -32,15 +32,36 @@
 
         .section-container { max-width: 1200px; margin: -60px auto 50px; padding: 0 20px; }
 
+        /* Services Grid */
+        .services-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .service-card-main {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 6px solid var(--dark-blue);
+            transition: 0.3s;
+        }
+
+        .service-card-main:hover { transform: scale(1.02); }
+        .service-card-main h3 { color: var(--primary-red); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .service-card-main ul { list-style: none; }
+        .service-card-main ul li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; font-size: 0.95rem; }
+        .service-card-main ul li i { color: var(--gold); font-size: 0.8rem; }
+
         .location-section {
             background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             margin-bottom: 40px; overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             border-bottom: 5px solid var(--primary-red);
         }
 
-        .address-info { padding: 40px; background: white; }
-        .address-info h2 { color: var(--primary-red); margin-bottom: 15px; }
-
+        .address-info { padding: 40px; }
         .map-box { background: #eee; min-height: 350px; position: relative; }
         .map-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
@@ -52,19 +73,16 @@
         .contact-card {
             background: #fff; padding: 25px; border-radius: 12px; border: 1px solid #eee;
             border-top: 5px solid var(--primary-red); text-align: center;
-            transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
-        .contact-card:hover { transform: translateY(-12px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); border-top-color: var(--dark-blue); }
-
-        .contact-card strong { color: var(--dark-blue); display: block; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 5px; letter-spacing: 0.5px; }
+        .contact-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
 
         .whatsapp-link-btn {
             display: inline-flex; align-items: center; justify-content: center;
             background: var(--whatsapp-green); color: white; padding: 10px 20px;
-            border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; transition: 0.3s;
+            border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px;
         }
-        .whatsapp-link-btn:hover { background: #128C7E; transform: scale(1.05); }
 
         footer { background: #1A1A1A; color: #999; padding: 40px 20px; text-align: center; margin-top: 60px; }
     </style>
@@ -81,19 +99,43 @@
     </header>
 
     <div class="section-container">
+        
+        <div class="services-wrapper">
+            <div class="service-card-main">
+                <h3><i class="fas fa-id-card"></i> Registrations</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Company & GST Registration</li>
+                    <li><i class="fas fa-check"></i> SRB, PRA, KPRA, BRA</li>
+                    <li><i class="fas fa-check"></i> Trade Mark & Chamber</li>
+                </ul>
+            </div>
+            <div class="service-card-main">
+                <h3><i class="fas fa-file-invoice-dollar"></i> Import / Export</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Documentation & Licensing</li>
+                    <li><i class="fas fa-check"></i> Custom Rebate & DLTL</li>
+                    <li><i class="fas fa-check"></i> SECP Compliance</li>
+                </ul>
+            </div>
+            <div class="service-card-main">
+                <h3><i class="fas fa-chart-line"></i> Tax Advisory</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Income Tax Filing (IRIS 3.0)</li>
+                    <li><i class="fas fa-check"></i> Sales Tax Returns</li>
+                    <li><i class="fas fa-check"></i> Financial Auditing</li>
+                </ul>
+            </div>
+        </div>
+
         <div class="location-section">
             <div class="address-info">
-                <h2>📍 Office Location</h2>
+                <h2 style="color: var(--primary-red);">📍 Office Location</h2>
                 <p><strong>Suite M-65, Munir Shoppers Paradise,</strong></p>
                 <p>Block-17, Gulistan-e-Johar, Karachi.</p>
                 <p style="color: var(--primary-red); font-weight: bold; margin-top: 10px;">Near Perfume Chowk</p>
             </div>
             <div class="map-box">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.123456789!2d67.123456789!3d24.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338e5e78b7787%3A0x53e2da792e9798ed!2sMunir%20Shoppers%20Paradise!5e0!3m2!1sen!2spk!4v1710500000000!5m2!1sen!2spk" 
-                    allowfullscreen="" 
-                    loading="lazy">
-                </iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.1234!2d67.1234!3d24.1234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDA3JzM0LjIiTiA2N8KwMDcnMjQuMiJF!5e0!3m2!1sen!2spk!4v17000000000002" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
 
@@ -136,7 +178,7 @@
 
     <footer>
         <h2 style="color: white; margin-bottom: 10px;">NOOR ASSOCIATES</h2>
-        <p>© 2026 Noor Associates - Financial Excellence You Can Trust.</p>
+        <p>© 2026 Noor Associates - Suite M-65, Gulistan-e-Johar, Karachi.</p>
     </footer>
 
 </body>
