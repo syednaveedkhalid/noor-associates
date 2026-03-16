@@ -84,7 +84,6 @@
             padding: 0 20px;
         }
 
-        /* Address & Map Section */
         .location-section {
             background: white;
             border-radius: 15px;
@@ -101,24 +100,11 @@
             background: #fff;
         }
 
-        .address-info h2 {
-            color: var(--primary-red);
-            margin-bottom: 20px;
-            font-family: 'Montserrat', sans-serif;
-        }
+        .address-info h2 { color: var(--primary-red); margin-bottom: 20px; font-family: 'Montserrat', sans-serif; }
 
-        .address-info p {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            color: var(--text-dark);
-        }
+        .address-info p { font-size: 1.1rem; margin-bottom: 15px; color: var(--text-dark); }
 
-        .map-box iframe {
-            width: 100%;
-            height: 100%;
-            min-height: 300px;
-            border: 0;
-        }
+        .map-box iframe { width: 100%; height: 100%; min-height: 300px; border: 0; }
 
         .services-wrapper {
             display: grid;
@@ -135,34 +121,11 @@
             border-top: 6px solid var(--dark-blue);
         }
 
-        .service-card:hover { transform: translateY(-5px); }
+        .service-card h3 { color: var(--primary-red); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
 
-        .service-card h3 {
-            color: var(--primary-red);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+        .cta-section { background: white; padding: 60px 20px; text-align: center; }
 
-        .service-card li {
-            padding: 8px 0;
-            border-bottom: 1px solid #eee;
-            list-style: none;
-        }
-
-        .cta-section {
-            background: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .brand-footer-name {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--dark-blue);
-        }
+        .brand-footer-name { font-family: 'Montserrat', sans-serif; font-size: 3rem; font-weight: 900; color: var(--dark-blue); }
 
         .naveed-contact {
             background: #E3F2FD;
@@ -198,15 +161,24 @@
             text-align: center;
         }
 
-        .contact-pill {
-            background: #2A2A2A;
-            padding: 15px;
-            border-radius: 8px;
-            color: white;
-            margin-bottom: 10px;
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
         }
 
-        .contact-pill span { color: var(--gold); display: block; font-size: 0.8rem; }
+        .contact-pill {
+            background: #2A2A2A;
+            padding: 15px 25px;
+            border-radius: 8px;
+            color: white;
+            min-width: 220px;
+            border-left: 3px solid var(--primary-red);
+        }
+
+        .contact-pill span { color: var(--gold); display: block; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 5px; }
 
         @media (max-width: 768px) {
             .hero-title { font-size: 1.5rem; }
@@ -242,26 +214,25 @@
                 <p><i class="fas fa-clock"></i> Mon - Sat (10:00 AM - 07:00 PM)</p>
             </div>
             <div class="map-box">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.1234!2d67.1234!3d24.1234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDA3JzM0LjIiTiA2N8KwMDcnMjQuMiJF!5e0!3m2!1sen!2spk!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.123456789!2d67.123456789!3d24.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338df377f3377%3A0x67e2db992e2fb8ed!2sMunir%20Shoppers%20Paradise!5e0!3m2!1sen!2spk!4v1710500000000!5m2!1sen!2spk" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
 
         <div class="services-wrapper">
             <div class="service-card">
                 <h3><i class="fas fa-id-card"></i> Registrations</h3>
-                <ul>
-                    <li><i class="fas fa-chevron-right"></i> Company Registration</li>
-                    <li><i class="fas fa-chevron-right"></i> SRB, PRA, KPRA, BRA</li>
-                    <li><i class="fas fa-chevron-right"></i> Trade Mark Registration</li>
-                    <li><i class="fas fa-chevron-right"></i> Chamber Registration</li>
+                <ul style="list-style: none;">
+                    <li><i class="fas fa-chevron-right" style="color: var(--gold); margin-right: 10px;"></i> Company & GST Registration</li>
+                    <li><i class="fas fa-chevron-right" style="color: var(--gold); margin-right: 10px;"></i> SRB, PRA, KPRA, BRA</li>
+                    <li><i class="fas fa-chevron-right" style="color: var(--gold); margin-right: 10px;"></i> Trade Mark & Chamber</li>
                 </ul>
             </div>
             <div class="service-card">
                 <h3><i class="fas fa-file-invoice-dollar"></i> Import / Export</h3>
-                <ul>
-                    <li><i class="fas fa-chevron-right"></i> Documentation & Licensing</li>
-                    <li><i class="fas fa-chevron-right"></i> Custom Rebate & DLTL</li>
-                    <li><i class="fas fa-chevron-right"></i> SECP Compliance</li>
+                <ul style="list-style: none;">
+                    <li><i class="fas fa-chevron-right" style="color: var(--gold); margin-right: 10px;"></i> Documentation & Licensing</li>
+                    <li><i class="fas fa-chevron-right" style="color: var(--gold); margin-right: 10px;"></i> Custom Rebate & DLTL</li>
+                    <li><i class="fas fa-chevron-right" style="color: var(--gold); margin-right: 10px;"></i> SECP Compliance</li>
                 </ul>
             </div>
         </div>
@@ -279,12 +250,13 @@
     </section>
 
     <footer>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 30px;">
+        <div class="contact-grid">
             <div class="contact-pill"><span>Senior Partner</span> Liaquat Ali: 0301-4789681</div>
             <div class="contact-pill"><span>Tax Consultant</span> Saleem Shaikh: 0346-3134415</div>
-            <div class="contact-pill"><span>WhatsApp Expert</span> Naveed: 0334-0207222</div>
+            <div class="contact-pill" style="border-left-color: #25D366;"><span>WhatsApp Expert</span> Naveed: 0334-0207222</div>
+            <div class="contact-pill" style="border-left-color: var(--gold);"><span>Corporate Advisor</span> Uzair: 0331-2999202</div>
         </div>
-        <p>&copy; 2026 Noor Associates - Suite M-65, Gulistan-e-Johar, Karachi.</p>
+        <p>© 2026 Noor Associates - Suite M-65, Gulistan-e-Johar, Karachi.</p>
     </footer>
 
 </body>
