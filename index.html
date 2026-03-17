@@ -239,6 +239,96 @@
         </div>
     </div>
 
+    <div class="contact-container">
+    <h2>Client Inquiry Form</h2>
+    <p>Apna masla niche likhein, hamari team jald raabta karegi.</p>
+    
+    <form id="taxForm">
+        <label>Full Name *</label>
+        <input type="text" id="name" placeholder="Apna poora naam likhein" required>
+
+        <label>WhatsApp Number *</label>
+        <input type="tel" id="phone" placeholder="03XXXXXXXXX" required>
+
+        <label>Service Needed</label>
+        <select id="service">
+            <option value="Income Tax (FBR)">Income Tax Filing (FBR)</option>
+            <option value="Sales Tax (SRB/FBR)">Sales Tax (SRB/FBR)</option>
+            <option value="Company Registration (SECP)">Company Registration (SECP)</option>
+            <option value="Trade Mark/Logo">Trade Mark / Logo Registration</option>
+            <option value="Other">Koi aur masla (Other)</option>
+        </select>
+
+        <label>Short Message / Problem</label>
+        <textarea id="message" rows="4" placeholder="Apna sawal yahan likhein..."></textarea>
+
+        <button type="button" onclick="sendToWhatsApp()">Submit via WhatsApp</button>
+    </form>
+</div>
+
+<style>
+    .contact-container {
+        max-width: 500px;
+        margin: 20px auto;
+        padding: 25px;
+        background: #fdfdfd;
+        border-radius: 10px;
+        box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+        font-family: Arial, sans-serif;
+        border-top: 5px solid #b8860b; /* Gold Border like your logo */
+    }
+    h2 { color: #002D62; text-align: center; margin-bottom: 5px; }
+    p { text-align: center; color: #666; font-size: 14px; margin-bottom: 20px; }
+    label { display: block; margin: 10px 0 5px; font-weight: bold; color: #333; }
+    input, select, textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    button {
+        width: 100%;
+        padding: 15px;
+        background: #25D366; /* WhatsApp Green */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    button:hover { background: #128C7E; }
+</style>
+
+<script>
+function sendToWhatsApp() {
+    // Apka WhatsApp Number yahan likhein (baghair + ya 00 ke)
+    const myNumber = "923340207222"; 
+
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const service = document.getElementById('service').value;
+    const msg = document.getElementById('message').value;
+
+    if(name == "" || phone == "") {
+        alert("Meharbani karke Naam aur Number zaroor likhein.");
+        return;
+    }
+
+    const finalMessage = `*New Inquiry - Noor Associates*%0A%0A` +
+        `*Name:* ${name}%0A` +
+        `*Phone:* ${phone}%0A` +
+        `*Service:* ${service}%0A` +
+        `*Message:* ${msg}`;
+
+    const whatsappUrl = `https://wa.me/${myNumber}?text=${finalMessage}`;
+    window.open(whatsappUrl, '_blank');
+}
+</script>
+
     <footer>
         <h2 style="color: white;">NOOR ASSOCIATES</h2>
         <p>© 2026 Noor Associates - Karachi, Pakistan.</p>
