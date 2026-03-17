@@ -17,15 +17,14 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); color: #2C3E50; line-height: 1.6; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); color: #2C3E50; line-height: 1.6; overflow-x: hidden; }
 
         .top-bar { background: var(--dark-blue); color: white; padding: 10px 0; text-align: center; font-size: 0.9rem; font-weight: 500; position: relative; z-index: 100; }
 
-        /* Adjusted Header height and padding to prevent hiding content */
         header {
             background: linear-gradient(135deg, var(--primary-red) 0%, #8B0000 100%);
             color: white; 
-            padding: 80px 20px 140px; /* Increased bottom padding */
+            padding: 80px 20px 160px; 
             text-align: center;
             border-bottom: 5px solid var(--gold); 
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
@@ -37,15 +36,14 @@
 
         .section-container { max-width: 1200px; margin: 0 auto 50px; padding: 0 20px; position: relative; }
 
-        /* Fixed Services Wrapper - Ensuring 'Registrations' is visible */
         .services-wrapper { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
             gap: 25px; 
-            margin-top: -80px; /* Adjusted to sit nicely on the slant */
+            margin-top: -80px; 
             margin-bottom: 60px;
             position: relative;
-            z-index: 20; /* Higher z-index to stay on top */
+            z-index: 20;
         }
 
         .service-card-main { 
@@ -63,38 +61,38 @@
         .service-list li { font-size: 0.95rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
         .service-list li i { color: var(--gold); font-size: 0.8rem; }
 
-        /* Verification Box */
         .verification-box {
             background: white; padding: 40px; border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 60px; text-align: center;
             border-top: 6px solid var(--whatsapp-green);
         }
         .v-input { width: 100%; max-width: 400px; padding: 15px; border-radius: 8px; border: 1px solid #ddd; margin: 15px 0; font-size: 1rem; }
-        .v-btn { background: var(--whatsapp-green); color: white; border: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; font-size: 1.1rem; }
+        .v-btn { background: var(--whatsapp-green); color: white; border: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; font-size: 1.1rem; text-decoration: none; }
 
-        /* Calendar Card */
-        .calendar-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 60px; }
-        .calendar-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .calendar-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 60px; overflow-x: auto; }
+        .calendar-table { width: 100%; border-collapse: collapse; margin-top: 20px; min-width: 500px; }
         .calendar-table th { background: var(--dark-blue); color: white; padding: 15px; text-align: left; }
         .calendar-table td { padding: 15px; border-bottom: 1px solid #eee; }
 
-        /* Team Grid */
-        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 30px;}
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px;}
         .team-card { background: white; padding: 25px; border-radius: 15px; border-left: 5px solid var(--gold); text-align: left; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
 
-        /* Location */
         .location-section { background: white; border-radius: 15px; overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); border-bottom: 5px solid var(--primary-red); box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 40px; }
         .address-info { padding: 40px; }
         .map-box { min-height: 400px; }
-        .map-box iframe { width: 100%; height: 100%; border: 0; }
+        .map-box iframe { width: 100%; height: 100%; border: 0; display: block; }
 
-        /* Footer */
+        .contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin: 20px 0; }
+        .contact-card { background: #fff; padding: 25px; border-radius: 12px; border-top: 5px solid var(--primary-red); text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .whatsapp-link-btn { display: inline-flex; align-items: center; background: var(--whatsapp-green); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; }
+
         footer { background: #1A1A1A; color: #999; padding: 40px 20px; text-align: center; margin-top: 60px; }
 
         @media (max-width: 600px) {
-            header { padding: 60px 15px 100px; }
-            .hero-title { font-size: 1.8rem; }
-            .services-wrapper { margin-top: -50px; }
+            header { padding: 60px 15px 120px; }
+            .hero-title { font-size: 1.6rem; }
+            .urdu-brand { font-size: 2.2rem; }
+            .services-wrapper { margin-top: -60px; }
         }
     </style>
 </head>
@@ -154,19 +152,39 @@
             <h2 style="color: var(--primary-red); font-family: 'Montserrat', sans-serif; text-align: center;">📅 Compliance Calendar</h2>
             <table class="calendar-table">
                 <thead>
-                    <tr><th>Due Date</th><th>Filing Task</th><th>Authority</th></tr>
+                    <tr>
+                        <th>Due Date</th>
+                        <th>Filing Task</th>
+                        <th>Authority</th>
+                    </tr>
                 </thead>
                 <tbody>
-                    <tr><td>15th Month</td><td>Sales Tax Returns</td><td>FBR / SRB</td></tr>
-                    <tr><td>21st Month</td><td>Withholding Tax</td><td>FBR</td></tr>
-                    <tr><td>30th Sept</td><td>Annual Income Tax</td><td>FBR (IRIS)</td></tr>
-                    <tr><td>31st Dec</td></tr>Annual Income Tax</td><td>FBR SECP</td></tr>
+                    <tr>
+                        <td>15th Month</td>
+                        <td>Sales Tax Returns</td>
+                        <td>FBR / SRB</td>
+                    </tr>
+                    <tr>
+                        <td>21st Month</td>
+                        <td>Withholding Tax</td>
+                        <td>FBR</td>
+                    </tr>
+                    <tr>
+                        <td>30th Sept</td>
+                        <td>Annual Income Tax</td>
+                        <td>FBR (IRIS)</td>
+                    </tr>
+                    <tr>
+                        <td>31st Dec</td>
+                        <td>Annual Returns</td>
+                        <td>SECP / FBR</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
 
         <div style="text-align: center; margin-bottom: 60px;">
-            <h2 style="color: var(--dark-blue); font-family: 'Montserrat', sans-serif;">Core Professional Team</h2>
+            <h2 style="color: var(--dark-blue); font-family: 'Montserrat', sans-serif; margin-bottom: 30px;">Core Professional Team</h2>
             <div class="team-grid">
                 <div class="team-card">
                     <strong>Syed Naveed Khalid</strong><br>
@@ -193,7 +211,7 @@
                 <p><strong>Suite M-65, Munir Shoppers Paradise,</strong><br>Block-17, Gulistan-e-Johar, Karachi.<br><br><strong>Near Perfume Chowk</strong></p>
             </div>
             <div class="map-box">
-                <iframe src="http://googleusercontent.com/maps.google.com/8" allowfullscreen=""></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.123456789!2d67.123456789!3d24.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDA3JzM0LjQiTiA2N8KwMDcnMzQuNCJF!5e0!3m2!1sen!2spk!4v1625000000000!5m2!1sen!2spk" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
 
