@@ -32,50 +32,36 @@
 
         .section-container { max-width: 1200px; margin: -60px auto 50px; padding: 0 20px; }
 
-        /* Resource Grid */
-        .resources-section { margin-bottom: 60px; text-align: center; }
-        .resources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
-        .resource-btn { 
-            background: white; padding: 20px; border-radius: 10px; text-decoration: none; color: var(--dark-blue);
-            font-weight: bold; border: 1px solid #ddd; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            display: flex; flex-direction: column; align-items: center; gap: 10px;
+        /* Verification Box Styling */
+        .verification-box {
+            background: white; padding: 40px; border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 60px; text-align: center;
+            border-top: 5px solid var(--whatsapp-green);
         }
-        .resource-btn:hover { border-color: var(--primary-red); transform: translateY(-5px); color: var(--primary-red); }
-        .resource-btn i { font-size: 1.5rem; color: var(--gold); }
+        .v-input { width: 100%; max-width: 400px; padding: 15px; border-radius: 8px; border: 1px solid #ddd; margin: 15px 0; font-size: 1rem; }
+        .v-btn { background: var(--whatsapp-green); color: white; border: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; font-size: 1.1rem; }
 
-        /* Tax Calendar Table */
+        /* Services Grid */
+        .services-wrapper { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-bottom: 60px; }
+        .service-card-main { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-top: 6px solid var(--dark-blue); }
+        .service-card-main h3 { color: var(--primary-red); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+
         .calendar-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 60px; }
         .calendar-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
         .calendar-table th { background: var(--dark-blue); color: white; padding: 15px; text-align: left; }
         .calendar-table td { padding: 15px; border-bottom: 1px solid #eee; }
-        .calendar-table tr:hover { background: #f9f9f9; }
 
-        /* Existing Sections Styling */
-        .services-wrapper { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-bottom: 60px; }
-        .service-card-main { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-top: 6px solid var(--dark-blue); }
-        .service-card-main h3 { color: var(--primary-red); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-        .service-card-main ul { list-style: none; }
-        .service-card-main ul li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
-        .service-card-main ul li i { color: var(--gold); }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px;}
+        .testimonial-card { background: white; padding: 25px; border-radius: 15px; border-left: 5px solid var(--gold); text-align: left; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
 
-        .why-choose-us { background: var(--dark-blue); color: white; padding: 50px 20px; border-radius: 20px; margin-bottom: 60px; text-align: center; }
-        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 30px; }
-        .why-item i { font-size: 2.5rem; color: var(--gold); margin-bottom: 15px; }
-
-        .testimonials-section { text-align: center; margin-bottom: 60px; }
-        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .testimonial-card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 5px solid var(--gold); text-align: left; position: relative; }
-        .testimonial-card i.quote { position: absolute; top: 15px; right: 15px; font-size: 1.2rem; color: #eee; }
-
-        .location-section { background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 40px; overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); border-bottom: 5px solid var(--primary-red); }
+        .location-section { background: white; border-radius: 15px; overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); border-bottom: 5px solid var(--primary-red); box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 40px; }
         .address-info { padding: 40px; }
-        .map-box { min-height: 400px; width: 100%; background: #eee; }
-        .map-box iframe { width: 100%; height: 100%; border: 0; display: block; }
+        .map-box { min-height: 400px; }
+        .map-box iframe { width: 100%; height: 100%; border: 0; }
 
         .contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; max-width: 1100px; margin: 20px auto; }
-        .contact-card { background: #fff; padding: 25px; border-radius: 12px; border: 1px solid #eee; border-top: 5px solid var(--primary-red); text-align: center; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .contact-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
-        .whatsapp-link-btn { display: inline-flex; align-items: center; justify-content: center; background: var(--whatsapp-green); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; }
+        .contact-card { background: #fff; padding: 25px; border-radius: 12px; border-top: 5px solid var(--primary-red); text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .whatsapp-link-btn { display: inline-flex; align-items: center; background: var(--whatsapp-green); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; }
 
         footer { background: #1A1A1A; color: #999; padding: 40px 20px; text-align: center; margin-top: 60px; }
     </style>
@@ -96,135 +82,65 @@
         <div class="services-wrapper">
             <div class="service-card-main">
                 <h3><i class="fas fa-id-card"></i> Registrations</h3>
-                <ul>
-                    <li><i class="fas fa-check-circle"></i> Company & GST Registration</li>
-                    <li><i class="fas fa-check-circle"></i> SRB, PRA, KPRA, BRA</li>
-                    <li><i class="fas fa-check-circle"></i> Trade Mark & Chamber</li>
-                </ul>
+                <p>Company, GST, SRB, PRA, KPRA, BRA & Chamber Registrations.</p>
             </div>
             <div class="service-card-main">
                 <h3><i class="fas fa-file-invoice-dollar"></i> Import / Export</h3>
-                <ul>
-                    <li><i class="fas fa-check-circle"></i> Documentation & Licensing</li>
-                    <li><i class="fas fa-check-circle"></i> Custom Rebate & DLTL</li>
-                    <li><i class="fas fa-check-circle"></i> SECP Compliance</li>
-                </ul>
+                <p>Custom Rebate, DLTL Licensing & SECP Compliance.</p>
             </div>
             <div class="service-card-main">
                 <h3><i class="fas fa-chart-line"></i> Tax Advisory</h3>
-                <ul>
-                    <li><i class="fas fa-check-circle"></i> Income Tax Filing (IRIS 3.0)</li>
-                    <li><i class="fas fa-check-circle"></i> Sales Tax Returns</li>
-                    <li><i class="fas fa-check-circle"></i> Financial Auditing</li>
-                </ul>
+                <p>Income Tax (IRIS 3.0), Sales Tax Filing & Auditing.</p>
             </div>
         </div>
 
-        <div class="resources-grid">
-    <a href="https://e.fbr.gov.pk/esearch/VerificationTaxpayer.aspx" target="_blank" rel="noopener noreferrer" class="resource-btn">
-        <i class="fas fa-search-dollar"></i> FBR NTN Verification
-    </a>
-    
-    <a href="https://e.fbr.gov.pk/esearch/SearchATL.aspx" target="_blank" rel="noopener noreferrer" class="resource-btn">
-        <i class="fas fa-user-check"></i> Check ATL Status
-    </a>
-    
-    <a href="https://e.srb.gos.pk/Registration/Verification.aspx" target="_blank" rel="noopener noreferrer" class="resource-btn">
-        <i class="fas fa-university"></i> SRB Registration Status
-    </a>
-    
-    <a href="https://eservices.secp.gov.pk/eServices/SearchEntityName.jsp" target="_blank" rel="noopener noreferrer" class="resource-btn">
-        <i class="fas fa-building"></i> SECP Company Search
-    </a>
-</div>
+        <div class="verification-box">
+            <h2 style="color: var(--dark-blue); font-family: 'Montserrat', sans-serif;">FBR NTN & ATL Verification</h2>
+            <p style="color: #666;">FBR portal down? Just enter your details and our expert will verify it for you via IRIS 3.0.</p>
+            <input type="text" id="verify_id" class="v-input" placeholder="Enter CNIC or NTN Number">
+            <br>
+            <button onclick="sendVerificationRequest()" class="v-btn">
+                <i class="fab fa-whatsapp"></i> Verify Status via WhatsApp
+            </button>
+            <p style="font-size: 0.8rem; margin-top: 10px; color: #888;">* We provide free status verification for our clients.</p>
+        </div>
 
         <div class="calendar-card">
             <h2 style="color: var(--primary-red); font-family: 'Montserrat', sans-serif; text-align: center;">📅 Tax Compliance Calendar</h2>
             <table class="calendar-table">
                 <thead>
-                    <tr>
-                        <th>Due Date</th>
-                        <th>Compliance Task</th>
-                        <th>Authority</th>
-                    </tr>
+                    <tr><th>Due Date</th><th>Task</th><th>Authority</th></tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>15th Each Month</td>
-                        <td>Monthly Sales Tax Return Filing</td>
-                        <td>FBR / SRB / PRA</td>
-                    </tr>
-                    <tr>
-                        <td>21st Each Month</td>
-                        <td>Income Tax Withholding Statement</td>
-                        <td>FBR (Section 149, 153)</td>
-                    </tr>
-                    <tr>
-                        <td>30th September</td>
-                        <td>Annual Income Tax Return (Individual)</td>
-                        <td>FBR (IRIS 3.0)</td>
-                    </tr>
-                    <tr>
-                        <td>31st December</td>
-                        <td>Annual Income Tax Return (Companies)</td>
-                        <td>FBR / SECP</td>
-                    </tr>
+                    <tr><td>15th Month</td><td>Sales Tax Return</td><td>FBR / SRB</td></tr>
+                    <tr><td>21st Month</td><td>Withholding Tax</td><td>FBR</td></tr>
+                    <tr><td>30th Sept</td><td>Annual Return</td><td>FBR (IRIS)</td></tr>
                 </tbody>
             </table>
         </div>
 
-        <div class="why-choose-us">
-            <h2 style="font-family: 'Montserrat', sans-serif;">Why Choose Noor Associates?</h2>
-            <div class="why-grid">
-                <div class="why-item">
-                    <i class="fas fa-user-tie"></i>
-                    <h4>Certified Experts</h4>
-                    <p>Qualified consultants for FBR & SECP matters.</p>
-                </div>
-                <div class="why-item">
-                    <i class="fas fa-hand-holding-usd"></i>
-                    <h4>Affordable Rates</h4>
-                    <p>Premium advisory services at competitive prices.</p>
-                </div>
-                <div class="why-item">
-                    <i class="fas fa-lock"></i>
-                    <h4>Confidentiality</h4>
-                    <p>Your financial data is 100% secure with us.</p>
-                </div>
-                <div class="why-item">
-                    <i class="fas fa-headset"></i>
-                    <h4>Quick Support</h4>
-                    <p>Direct WhatsApp access to our senior experts.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="testimonials-section">
-            <h2>Core Professional Team</h2>
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h2 style="color: var(--dark-blue); font-family: 'Montserrat', sans-serif;">Our Core Professional Team</h2>
             <div class="testimonial-grid">
                 <div class="testimonial-card">
-                    <i class="fas fa-quote-right quote"></i>
-                    <p>"We ensure 100% transparency in every business registration and tax compliance process."</p>
-                    <strong>Syed Naveed Khalid</strong>
+                    <strong>Syed Naveed Khalid</strong><br>
                     <span>Assistant Tax Consultant</span>
+                    <p style="margin-top:10px; font-style: italic;">"Ensuring 100% transparency in tax compliance."</p>
                 </div>
                 <div class="testimonial-card">
-                    <i class="fas fa-quote-right quote"></i>
-                    <p>"Dedicated to providing seamless income tax filing and legal advisory for your business."</p>
-                    <strong>Uzair</strong>
+                    <strong>Uzair</strong><br>
                     <span>Tax Advisor</span>
+                    <p style="margin-top:10px; font-style: italic;">"Expert legal and income tax advisory."</p>
                 </div>
                 <div class="testimonial-card">
-                    <i class="fas fa-quote-right quote"></i>
-                    <p>"Decades of experience in handling complex FBR audits and corporate registrations."</p>
-                    <strong>Liaquat Ali</strong>
+                    <strong>Liaquat Ali</strong><br>
                     <span>Senior Partner</span>
+                    <p style="margin-top:10px; font-style: italic;">"Decades of corporate audit expertise."</p>
                 </div>
                 <div class="testimonial-card">
-                    <i class="fas fa-quote-right quote"></i>
-                    <p>"Expert in SRB, Sales Tax matters and industrial custom rebate compliance."</p>
-                    <strong>Saleem Shaikh</strong>
+                    <strong>Saleem Shaikh</strong><br>
                     <span>Senior Tax Advisor</span>
+                    <p style="margin-top:10px; font-style: italic;">"Specialist in SRB and Custom Rebate."</p>
                 </div>
             </div>
         </div>
@@ -232,53 +148,49 @@
         <div class="location-section">
             <div class="address-info">
                 <h2 style="color: var(--primary-red);">📍 Office Location</h2>
-                <p><strong>Suite M-65, Munir Shoppers Paradise,</strong></p>
-                <p>Block-17, Gulistan-e-Johar, Karachi.</p>
-                <p style="color: var(--primary-red); font-weight: bold; margin-top: 10px;">Near Perfume Chowk</p>
+                <p><strong>Suite M-65, Munir Shoppers Paradise,</strong><br>Gulistan-e-Johar, Karachi. (Near Perfume Chowk)</p>
             </div>
             <div class="map-box">
-                <iframe src="https://maps.google.com/?cid=6044635066485545197&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.514785465565!2d67.1265!3d24.912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338df377f0c15%3A0xc074719e7100e47!2sMunir%20Shoppers%20Paradise!5e0!3m2!1sen!2s!4v1700000000000" allowfullscreen=""></iframe>
             </div>
         </div>
 
-        <h2 style="text-align: center; color: var(--dark-blue); margin-bottom: 30px; font-family: 'Montserrat', sans-serif;">CONTACT OUR EXPERTS</h2>
-        
         <div class="contact-container">
             <div class="contact-card">
                 <strong>Assistant Tax Consultant</strong>
                 <h4>Syed Naveed Khalid</h4>
-                <a href="https://wa.me/923340207222" class="whatsapp-link-btn" target="_blank">
-                    <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp
-                </a>
+                <a href="https://wa.me/923340207222" class="whatsapp-link-btn" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
             </div>
             <div class="contact-card">
                 <strong>Tax Advisor</strong>
                 <h4>Uzair</h4>
-                <a href="https://wa.me/923312999202" class="whatsapp-link-btn" target="_blank">
-                    <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp
-                </a>
+                <a href="https://wa.me/923312999202" class="whatsapp-link-btn" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
             </div>
             <div class="contact-card">
                 <strong>Senior Partner</strong>
                 <h4>Liaquat Ali</h4>
-                <a href="https://wa.me/923014789681" class="whatsapp-link-btn" target="_blank">
-                    <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp
-                </a>
+                <a href="https://wa.me/923014789681" class="whatsapp-link-btn" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
             </div>
             <div class="contact-card">
                 <strong>Senior Tax Advisor</strong>
                 <h4>Saleem Shaikh</h4>
-                <a href="https://wa.me/923463134415" class="whatsapp-link-btn" target="_blank">
-                    <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp
-                </a>
+                <a href="https://wa.me/923463134415" class="whatsapp-link-btn" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
             </div>
         </div>
     </div>
 
     <footer>
-        <h2 style="color: white; margin-bottom: 10px;">NOOR ASSOCIATES</h2>
-        <p>© 2026 Noor Associates - Suite M-65, Gulistan-e-Johar, Karachi.</p>
+        <h2 style="color: white;">NOOR ASSOCIATES</h2>
+        <p>© 2026 Noor Associates - Gulistan-e-Johar, Karachi.</p>
     </footer>
 
+    <script>
+        function sendVerificationRequest() {
+            var val = document.getElementById('verify_id').value;
+            if(val == "") { alert("Please enter a CNIC or NTN!"); return; }
+            var msg = "Assalam-o-Alaikum Noor Associates, please verify the NTN/ATL status for: " + val;
+            window.open("https://wa.me/923340207222?text=" + encodeURIComponent(msg), "_blank");
+        }
+    </script>
 </body>
 </html>
