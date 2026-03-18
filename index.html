@@ -9,7 +9,7 @@
             --navy-blue: #0a1d37;
             --gold: #c5a059;
             --white: #ffffff;
-            --dark-grey: #333;
+            --dark-grey: #1a1a1a;
         }
 
         body {
@@ -20,17 +20,16 @@
             color: var(--dark-grey);
         }
 
-        /* Header - Font size balanced */
         header {
             background-color: var(--navy-blue);
             color: var(--white);
-            padding: 35px 20px;
+            padding: 40px 20px;
             text-align: center;
             border-bottom: 5px solid var(--gold);
         }
 
         .logo-text {
-            font-size: 2.2em; /* Balanced size */
+            font-size: 2.5em;
             font-weight: 800;
             letter-spacing: 2px;
             margin: 0;
@@ -41,133 +40,136 @@
         .address-bar {
             background: #000;
             color: var(--gold);
-            padding: 8px;
+            padding: 10px;
             text-align: center;
-            font-weight: 600;
-            font-size: 0.95em;
+            font-weight: bold;
         }
 
         .container {
             max-width: 1100px;
             margin: auto;
-            padding: 30px 20px;
+            padding: 40px 20px;
         }
 
         .section-title {
             text-align: center;
             color: var(--navy-blue);
             font-size: 1.8em;
-            font-weight: 700;
+            font-weight: 800;
             text-transform: uppercase;
             border-bottom: 3px solid var(--gold);
             display: inline-block;
             margin-bottom: 30px;
-            padding-bottom: 5px;
         }
 
-        /* Services Cards */
+        /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
 
         .service-card {
             background: var(--white);
             border: 1px solid #ddd;
-            padding: 20px;
+            padding: 25px;
             border-top: 5px solid var(--gold);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        .service-card h3 { 
-            color: var(--navy-blue); 
-            font-size: 1.3em;
-            margin-bottom: 15px;
-        }
+        .service-card h3 { color: var(--navy-blue); font-weight: 800; margin-top: 0; }
 
-        .service-card li {
-            font-weight: 500;
-            margin-bottom: 5px;
-            font-size: 0.95em;
-        }
-
-        /* Contact Form */
+        /* Form Section */
         .form-section {
             background-color: var(--navy-blue);
             color: var(--white);
-            padding: 40px 20px;
+            padding: 50px 20px;
             text-align: center;
         }
 
         .contact-form {
             max-width: 500px;
-            margin: 20px auto;
+            margin: auto;
             background: var(--white);
-            padding: 25px;
+            padding: 30px;
             border-radius: 8px;
             text-align: left;
         }
 
-        .contact-form input, .contact-form textarea {
+        .contact-form input, .contact-form select, .contact-form textarea {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin-bottom: 15px;
-            border: 1px solid var(--gold);
+            border: 2px solid var(--gold);
             border-radius: 4px;
             box-sizing: border-box;
+            font-weight: 600;
         }
 
         .submit-btn {
             background-color: var(--navy-blue);
             color: var(--gold);
-            padding: 12px;
+            padding: 15px;
             border: none;
-            font-weight: 700;
+            font-weight: 800;
             cursor: pointer;
             width: 100%;
             text-transform: uppercase;
+            font-size: 1.1em;
+            transition: 0.3s;
         }
 
-        /* Contacts with WhatsApp Buttons */
-        .contact-grid {
+        .submit-btn:hover { background-color: var(--gold); color: var(--navy-blue); }
+
+        /* Footer / Team Grid */
+        .footer-team {
+            background-color: #f9f9f9;
+            padding: 50px 20px;
+            border-top: 2px solid #eee;
+        }
+
+        .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
         }
 
-        .contact-info {
-            background: #fdfdfd;
-            padding: 15px;
-            border: 1px solid #eee;
-            border-bottom: 3px solid var(--gold);
+        .team-card {
+            background: var(--white);
+            padding: 20px;
+            border: 1px solid var(--gold);
             text-align: center;
+            border-radius: 5px;
         }
 
-        .contact-info strong { font-size: 1.05em; color: var(--navy-blue); }
-
-        .wa-btn {
-            display: inline-block;
+        .team-card strong { color: var(--navy-blue); font-size: 1.2em; display: block; }
+        .team-card span { color: #666; font-size: 0.9em; font-weight: bold; }
+        
+        .wa-link {
+            display: block;
             margin-top: 10px;
-            background-color: #25d366;
-            color: white;
-            padding: 8px 12px;
-            border-radius: 5px;
+            color: #25d366;
             text-decoration: none;
-            font-size: 0.85em;
+            font-weight: 800;
+            font-size: 1em;
+        }
+
+        footer {
+            background-color: #000;
+            color: #888;
+            text-align: center;
+            padding: 20px;
             font-weight: bold;
         }
-
-        .wa-btn:hover { background-color: #128c7e; }
-
     </style>
 </head>
 <body>
 
 <header>
     <h1 class="logo-text">NOOR ASSOCIATES</h1>
-    <p style="font-weight: 600;">Trusted Partner in Tax & Compliance</p>
+    <p style="font-weight: 600; letter-spacing: 1px;">TAX, CORPORATE & BUSINESS ADVISORY</p>
 </header>
 
 <div class="address-bar">
@@ -175,28 +177,28 @@
 </div>
 
 <div class="container" style="text-align: center;">
-    <h2 class="section-title">Our Services</h2>
+    <h2 class="section-title">Professional Services</h2>
     <div class="services-grid">
         <div class="service-card">
             <h3>INCOME TAX</h3>
-            <ul>
-                <li>Individual & Business Filing</li>
-                <li>IRIS 3.0 Support</li>
-                <li>Tax Planning</li>
+            <ul style="text-align: left; font-weight: 600;">
+                <li>Individual & Company Returns</li>
+                <li>IRIS 3.0 Compliance</li>
+                <li>Wealth Statements</li>
             </ul>
         </div>
         <div class="service-card">
             <h3>SALES TAX</h3>
-            <ul>
-                <li>FBR & SRB Registration</li>
-                <li>Monthly Returns</li>
-                <li>Custom Rebate</li>
+            <ul style="text-align: left; font-weight: 600;">
+                <li>FBR & SRB Registrations</li>
+                <li>Monthly Filing & Audits</li>
+                <li>Custom Rebates</li>
             </ul>
         </div>
         <div class="service-card">
-            <h3>BUSINESS REG.</h3>
-            <ul>
-                <li>SECP Compliance</li>
+            <h3>CORPORATE</h3>
+            <ul style="text-align: left; font-weight: 600;">
+                <li>SECP Firm Registrations</li>
                 <li>Chamber of Commerce</li>
                 <li>Trade Mark & Logo</li>
             </ul>
@@ -205,51 +207,75 @@
 </div>
 
 <section class="form-section">
-    <h2 style="color: var(--gold); margin-bottom: 10px; font-weight: 800;">FREE CONSULTATION</h2>
-    <p style="font-size: 0.9em; margin-bottom: 15px;">Your message will be sent to all our experts via WhatsApp</p>
+    <h2 style="color: var(--gold); font-weight: 800; margin-bottom: 20px;">GET FREE CONSULTATION</h2>
     <div class="contact-form">
-        <form id="noorForm">
-            <input type="text" id="name" placeholder="Full Name" required>
-            <input type="text" id="phone" placeholder="Phone Number" required>
-            <textarea id="msg" rows="3" placeholder="How can we help? (e.g. FBR Registration, Sales Tax)"></textarea>
+        <form id="waForm">
+            <input type="text" id="name" placeholder="Your Full Name" required>
+            <input type="text" id="phone" placeholder="Your Phone Number" required>
             
-            <button type="button" onclick="sendToAll()" class="submit-btn">
-                Send Message to All Experts 💬
-            </button>
+            <label style="color: var(--navy-blue); font-weight: 800; font-size: 0.8em;">SEND MESSAGE TO:</label>
+            <select id="targetWa">
+                <option value="923014789681">Liaquat Ali</option>
+                <option value="923340207222">Syed Naveed Khalid</option>
+                <option value="923312999202">Uzair</option>
+                <option value="923463134415">Saleem Shaikh</option>
+            </select>
+
+            <textarea id="msg" rows="3" placeholder="How can we help you?"></textarea>
+            
+            <button type="button" onclick="sendInquiry()" class="submit-btn">SEND TO WHATSAPP 💬</button>
         </form>
     </div>
 </section>
 
-<script>
-function sendToAll() {
-    // Data lena
-    const clientName = document.getElementById('name').value;
-    const clientPhone = document.getElementById('phone').value;
-    const clientMsg = document.getElementById('msg').value;
+<section class="footer-team">
+    <div style="text-align: center;"><h2 class="section-title">Our Expert Team</h2></div>
+    <div class="team-grid">
+        <div class="team-card">
+            <strong>LIAQUAT ALI</strong>
+            <span>Associate Advisor</span>
+            <a href="https://wa.me/923014789681" class="wa-link">🟢 0301-4789681</a>
+        </div>
+        <div class="team-card">
+            <strong>SYED NAVEED KHALID</strong>
+            <span>Assistant Tax Consultant</span>
+            <a href="https://wa.me/923340207222" class="wa-link">🟢 0334-0207222</a>
+        </div>
+        <div class="team-card">
+            <strong>UZAIR</strong>
+            <span>Tax Advisor</span>
+            <a href="https://wa.me/923312999202" class="wa-link">🟢 0331-2999202</a>
+        </div>
+        <div class="team-card">
+            <strong>SALEEM SHAIKH</strong>
+            <span>Senior Tax Advisor</span>
+            <a href="https://wa.me/923463134415" class="wa-link">🟢 0346-3134415</a>
+        </div>
+    </div>
+</section>
 
-    if(clientName == "" || clientPhone == "") {
-        alert("Please enter your Name and Phone Number.");
+<footer>
+    &copy; 2026 NOOR ASSOCIATES | ALL RIGHTS RESERVED
+</footer>
+
+<script>
+function sendInquiry() {
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const msg = document.getElementById('msg').value;
+    const num = document.getElementById('targetWa').value;
+
+    if(name == "" || phone == "") {
+        alert("Please enter Name and Phone Number.");
         return;
     }
 
-    // Message ka format
-    const text = `*New Inquiry for Noor Associates*%0A%0A` +
-                 `*Name:* ${clientName}%0A` +
-                 `*Phone:* ${clientPhone}%0A` +
-                 `*Message:* ${clientMsg}`;
+    const text = `*Website Inquiry - Noor Associates*%0A%0A` +
+                 `*Client:* ${name}%0A` +
+                 `*Phone:* ${phone}%0A` +
+                 `*Query:* ${msg}`;
 
-    // Charo Numbers ki List
-    const numbers = [
-        "923014789681", // Liaquat Ali
-        "923340207222", // Syed Naveed Khalid
-        "923312999202", // Uzair
-        "923463134415"  // Saleem Shaikh
-    ];
-
-    // Har number ke liye alag tab kholna
-    numbers.forEach((num) => {
-        window.open(`https://wa.me/${num}?text=${text}`, '_blank');
-    });
+    window.open(`https://wa.me/${num}?text=${text}`, '_blank');
 }
 </script>
 
