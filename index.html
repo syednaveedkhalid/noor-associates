@@ -205,42 +205,53 @@
 </div>
 
 <section class="form-section">
-    <h2 style="color: var(--gold); margin-bottom: 10px;">FREE CONSULTATION</h2>
+    <h2 style="color: var(--gold); margin-bottom: 10px; font-weight: 800;">FREE CONSULTATION</h2>
+    <p style="font-size: 0.9em; margin-bottom: 15px;">Your message will be sent to all our experts via WhatsApp</p>
     <div class="contact-form">
-        <form action="#">
-            <input type="text" placeholder="Full Name" required>
-            <input type="text" placeholder="Phone Number" required>
-            <textarea rows="3" placeholder="How can we help?"></textarea>
-            <button type="submit" class="submit-btn">Send Message</button>
+        <form id="noorForm">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="text" id="phone" placeholder="Phone Number" required>
+            <textarea id="msg" rows="3" placeholder="How can we help? (e.g. FBR Registration, Sales Tax)"></textarea>
+            
+            <button type="button" onclick="sendToAll()" class="submit-btn">
+                Send Message to All Experts 💬
+            </button>
         </form>
     </div>
 </section>
 
-<section class="container" style="text-align: center;">
-    <h2 class="section-title">Contact Our Team</h2>
-    <div class="contact-grid">
-        <div class="contact-info">
-            <strong>Liaquat Ali</strong><br>
-            <a href="https://wa.me/923014789681" class="wa-btn">WhatsApp: 0301-4789681</a>
-        </div>
-        <div class="contact-info">
-            <strong>Syed Naveed Khalid</strong><br>
-            <a href="https://wa.me/923340207222" class="wa-btn">WhatsApp: 0334-0207222</a>
-        </div>
-        <div class="contact-info">
-            <strong>Uzair</strong><br>
-            <a href="https://wa.me/923312999202" class="wa-btn">WhatsApp: 0331-2999202</a>
-        </div>
-        <div class="contact-info">
-            <strong>Saleem Shaikh</strong><br>
-            <a href="https://wa.me/923463134415" class="wa-btn">WhatsApp: 0346-3134415</a>
-        </div>
-    </div>
-</section>
+<script>
+function sendToAll() {
+    // Data lena
+    const clientName = document.getElementById('name').value;
+    const clientPhone = document.getElementById('phone').value;
+    const clientMsg = document.getElementById('msg').value;
 
-<footer style="text-align: center; padding: 20px; background: #111; color: #666; font-size: 0.9em;">
-    &copy; 2026 NOOR ASSOCIATES. PROFESSIONAL TAX ADVISORY.
-</footer>
+    if(clientName == "" || clientPhone == "") {
+        alert("Please enter your Name and Phone Number.");
+        return;
+    }
+
+    // Message ka format
+    const text = `*New Inquiry for Noor Associates*%0A%0A` +
+                 `*Name:* ${clientName}%0A` +
+                 `*Phone:* ${clientPhone}%0A` +
+                 `*Message:* ${clientMsg}`;
+
+    // Charo Numbers ki List
+    const numbers = [
+        "923014789681", // Liaquat Ali
+        "923340207222", // Syed Naveed Khalid
+        "923312999202", // Uzair
+        "923463134415"  // Saleem Shaikh
+    ];
+
+    // Har number ke liye alag tab kholna
+    numbers.forEach((num) => {
+        window.open(`https://wa.me/${num}?text=${text}`, '_blank');
+    });
+}
+</script>
 
 </body>
 </html>
