@@ -214,54 +214,49 @@
 </div>
 
 <section class="form-section">
-    <h2 style="color: var(--gold); font-size: 2.2em; font-weight: 900;">FREE CONSULTATION</h2>
-    <p style="font-weight: bold;">Fill the form below and we will contact you shortly.</p>
-    
-    <div class="contact-form">
-        <form action="#">
-            <label>Full Name</label>
-            <input type="text" placeholder="Your Name" required>
+    <form id="multiWaForm">
+            <input type="text" id="cName" placeholder="Your Name" required>
+            <input type="text" id="cPhone" placeholder="Your Phone Number" required>
             
-            <label>Phone Number</label>
-            <input type="text" placeholder="03XX-XXXXXXX" required>
+            <label style="color: var(--navy-blue); font-size: 0.8em;">Select Associate to Contact:</label>
+            <select id="waTarget" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid var(--gold); border-radius: 4px; font-weight: bold;">
+                <option value="923014789681">Liaquat Ali</option>
+                <option value="923312999202">Uzair (Tax Advisor)</option>
+                <option value="923340207222">Syed Naveed Khalid</option>
+                <option value="923463134415">Saleem Shaikh (Senior Advisor)</option>
+            </select>
+
+            <textarea id="cMsg" rows="3" placeholder="Explain your requirement (FBR, SRB, SECP...)" required></textarea>
             
-            <label>Nature of Query</label>
-            <textarea rows="4" placeholder="How can we help you?"></textarea>
-            
-            <button type="submit" class="submit-btn">Send Message</button>
+            <button type="button" onclick="sendMultiWa()" class="submit-btn">
+                START CHAT ON WHATSAPP 💬
+            </button>
         </form>
     </div>
 </section>
 
-<section class="container" style="text-align: center;">
-    <h2 class="section-title">Contact Our Experts</h2>
-    <div class="contact-grid">
-        <div class="contact-info">
-            Liaquat Ali<br>
-            <span style="color:var(--navy-blue)">0301-4789681</span>
-        </div>
-        <div class="contact-info">
-            Syed Naveed Khalid<br>
-            <span style="color:var(--navy-blue)">0334-0207222</span>
-        </div>
-        <div class="contact-info">
-            Uzair<br>
-            <span style="color:var(--navy-blue)">0331-2999202</span>
-        </div>
-        <div class="contact-info">
-            Saleem Shaikh<br>
-            <span style="color:var(--navy-blue)">0346-3134415</span>
-        </div>
-    </div>
-</section>
+<script>
+function sendMultiWa() {
+    const name = document.getElementById('cName').value;
+    const phone = document.getElementById('cPhone').value;
+    const message = document.getElementById('cMsg').value;
+    const targetNumber = document.getElementById('waTarget').value; // Selected number from dropdown
 
-<a href="https://wa.me/923312999202" class="wa-float" target="_blank">
-    💬 WHATSAPP UZAIR
-</a>
+    if(name == "" || phone == "" || message == "") {
+        alert("Please fill all details!");
+        return;
+    }
 
-<footer style="text-align: center; padding: 25px; background: #111; color: #777; font-weight: bold;">
-    &copy; 2026 NOOR ASSOCIATES. ALL RIGHTS RESERVED.
-</footer>
+    // Message Formatting
+    const finalMsg = `*Noor Associates Inquiry*%0A%0A` +
+                     `*From:* ${name}%0A` +
+                     `*Contact:* ${phone}%0A` +
+                     `*Details:* ${message}`;
 
+    // Opening WhatsApp for the selected person
+    const url = `https://wa.me/${targetNumber}?text=${finalMsg}`;
+    window.open(url, '_blank').focus();
+}
+</script>
 </body>
 </html>
