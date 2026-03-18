@@ -3,344 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noor Associates | Premium Tax & Business Advisory</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Poppins:wght@400;500;700&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+    <title>Noor Associates | Tax & Compliance Experts</title>
     <style>
         :root {
-            --primary-red: #D32F2F;
-            --dark-blue: #0D47A1;
-            --gold: #FFD700;
-            --whatsapp-green: #25D366;
-            --light-bg: #F8F9FA;
+            --navy-blue: #0a1d37;
+            --gold: #c5a059;
+            --white: #ffffff;
+            --light-grey: #f4f4f4;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); color: #2C3E50; line-height: 1.6; overflow-x: hidden; }
-
-        .top-bar { background: var(--dark-blue); color: white; padding: 10px 0; text-align: center; font-size: 0.9rem; font-weight: 500; position: relative; z-index: 100; }
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
 
         header {
-            background: linear-gradient(135deg, var(--primary-red) 0%, #8B0000 100%);
-            color: white; 
-            padding: 80px 20px 160px; 
+            background-color: var(--navy-blue);
+            color: var(--white);
+            padding: 40px 20px;
             text-align: center;
-            border-bottom: 5px solid var(--gold); 
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
-            position: relative;
+            border-bottom: 5px solid var(--gold);
         }
 
-        .hero-title { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 2.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-        .urdu-brand { font-family: 'Noto Nastaliq Urdu', serif; font-size: 3rem; color: var(--gold); margin: 15px 0; }
-
-        .section-container { max-width: 1200px; margin: 0 auto 50px; padding: 0 20px; position: relative; }
-
-        .services-wrapper { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 25px; 
-            margin-top: -80px; 
-            margin-bottom: 60px;
-            position: relative;
-            z-index: 20;
+        .logo-text {
+            font-size: 2.5em;
+            letter-spacing: 2px;
+            margin: 0;
+            color: var(--gold);
         }
 
-        .service-card-main { 
-            background: white; 
-            padding: 30px; 
-            border-radius: 15px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
-            border-top: 6px solid var(--dark-blue); 
-            transition: 0.3s;
+        .address-bar {
+            background: #000;
+            color: var(--gold);
+            padding: 10px;
+            text-align: center;
+            font-size: 0.9em;
         }
-        .service-card-main:hover { transform: translateY(-10px); }
-        .service-card-main h3 { color: var(--primary-red); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; font-weight: 700; }
-        
-        .service-list { list-style: none; }
-        .service-list li { font-size: 0.95rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
-        .service-list li i { color: var(--gold); font-size: 0.8rem; }
 
-        .verification-box {
-            background: white; padding: 40px; border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 60px; text-align: center;
-            border-top: 6px solid var(--whatsapp-green);
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
         }
-        .v-input { width: 100%; max-width: 400px; padding: 15px; border-radius: 8px; border: 1px solid #ddd; margin: 15px 0; font-size: 1rem; }
-        .v-btn { background: var(--whatsapp-green); color: white; border: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; font-size: 1.1rem; text-decoration: none; }
 
-        .calendar-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 60px; overflow-x: auto; }
-        .calendar-table { width: 100%; border-collapse: collapse; margin-top: 20px; min-width: 500px; }
-        .calendar-table th { background: var(--dark-blue); color: white; padding: 15px; text-align: left; }
-        .calendar-table td { padding: 15px; border-bottom: 1px solid #eee; }
+        .section-title {
+            text-align: center;
+            color: var(--navy-blue);
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--gold);
+            display: inline-block;
+            margin-bottom: 30px;
+        }
 
-        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px;}
-        .team-card { background: white; padding: 25px; border-radius: 15px; border-left: 5px solid var(--gold); text-align: left; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
 
-        .location-section { background: white; border-radius: 15px; overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); border-bottom: 5px solid var(--primary-red); box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 40px; }
-        .address-info { padding: 40px; }
-        .map-box { min-height: 400px; }
-        .map-box iframe { width: 100%; height: 100%; border: 0; display: block; }
+        .service-card {
+            background: var(--white);
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-top: 4px solid var(--gold);
+        }
 
-        .contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin: 20px 0; }
-        .contact-card { background: #fff; padding: 25px; border-radius: 12px; border-top: 5px solid var(--primary-red); text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .whatsapp-link-btn { display: inline-flex; align-items: center; background: var(--whatsapp-green); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; }
+        .service-card h3 { color: var(--navy-blue); margin-top: 0; }
 
-        footer { background: #1A1A1A; color: #999; padding: 40px 20px; text-align: center; margin-top: 60px; }
+        .why-us {
+            background-color: var(--navy-blue);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+        }
 
-        @media (max-width: 600px) {
-            header { padding: 60px 15px 120px; }
-            .hero-title { font-size: 1.6rem; }
-            .urdu-brand { font-size: 2.2rem; }
-            .services-wrapper { margin-top: -60px; }
+        .contact-footer {
+            background-color: var(--light-grey);
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        /* Updated Contact Grid for 4 members */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-info {
+            background: var(--white);
+            padding: 20px;
+            border: 1px solid var(--gold);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .contact-info strong { color: var(--navy-blue); font-size: 1.1em; }
+
+        .wa-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 2px 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
         }
     </style>
 </head>
 <body>
 
-    <div class="top-bar">
-        <i class="fas fa-check-circle"></i> FBR, SRB & SECP Authorized Consultants | Noor Associates
-    </div>
+<header>
+    <h1 class="logo-text">NOOR ASSOCIATES</h1>
+    <p>Your Trusted Partner in Tax & Compliance</p>
+</header>
 
-    <header>
-        <h1 class="hero-title">TAX. ACCOUNTING. BPO. ADVISORY</h1>
-        <div class="urdu-brand">سیل اینڈ انکم ٹیکس</div>
-    </header>
-
-    <div class="section-container">
-        
-        <div class="services-wrapper">
-            <div class="service-card-main">
-                <h3><i class="fas fa-id-card"></i> Registrations</h3>
-                <ul class="service-list">
-                    <li><i class="fas fa-check-circle"></i> Company & GST Registration</li>
-                    <li><i class="fas fa-check-circle"></i> SRB, PRA, KPRA, BRA Status</li>
-                    <li><i class="fas fa-check-circle"></i> Trade Mark & Chamber</li>
-                </ul>
-            </div>
-            
-            <div class="service-card-main">
-                <h3><i class="fas fa-file-invoice-dollar"></i> Import / Export</h3>
-                <ul class="service-list">
-                    <li><i class="fas fa-check-circle"></i> Custom Rebate & DLTL</li>
-                    <li><i class="fas fa-check-circle"></i> WEBOC & Licensing</li>
-                    <li><i class="fas fa-check-circle"></i> SECP Compliance</li>
-                </ul>
-            </div>
-
-            <div class="service-card-main">
-                <h3><i class="fas fa-chart-line"></i> Tax Advisory</h3>
-                <ul class="service-list">
-                    <li><i class="fas fa-check-circle"></i> Income Tax Returns (IRIS 3.0)</li>
-                    <li><i class="fas fa-check-circle"></i> Monthly Sales Tax Filing</li>
-                    <li><i class="fas fa-check-circle"></i> FBR Audit Representation</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="verification-box">
-            <h2 style="color: var(--dark-blue); font-family: 'Montserrat', sans-serif;">NTN & ATL Status Checker</h2>
-            <p style="color: #666;">Enter your CNIC or NTN number below to get instant verification from our experts.</p>
-            <input type="text" id="verify_id" class="v-input" placeholder="e.g. 42101-0000000-0">
-            <br>
-            <button onclick="sendVerificationRequest()" class="v-btn">
-                <i class="fab fa-whatsapp"></i> Verify via WhatsApp
-            </button>
-        </div>
-
-        <div class="calendar-card">
-            <h2 style="color: var(--primary-red); font-family: 'Montserrat', sans-serif; text-align: center;">📅 Compliance Calendar</h2>
-            <table class="calendar-table">
-                <thead>
-                    <tr>
-                        <th>Due Date</th>
-                        <th>Filing Task</th>
-                        <th>Authority</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>15th Month</td>
-                        <td>Sales Tax Returns</td>
-                        <td>FBR / SRB</td>
-                    </tr>
-                    <tr>
-                        <td>21st Month</td>
-                        <td>Withholding Tax</td>
-                        <td>FBR</td>
-                    </tr>
-                    <tr>
-                        <td>30th Sept</td>
-                        <td>Annual Income Tax</td>
-                        <td>FBR (IRIS)</td>
-                    </tr>
-                    <tr>
-                        <td>31st Dec</td>
-                        <td>Annual Returns</td>
-                        <td>SECP / FBR</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div style="text-align: center; margin-bottom: 60px;">
-            <h2 style="color: var(--dark-blue); font-family: 'Montserrat', sans-serif; margin-bottom: 30px;">Core Professional Team</h2>
-            <div class="team-grid">
-                <div class="team-card">
-                    <strong>Syed Naveed Khalid</strong><br>
-                    <span>Assistant Tax Consultant</span>
-                </div>
-                <div class="team-card">
-                    <strong>Uzair</strong><br>
-                    <span>Tax Advisor</span>
-                </div>
-                <div class="team-card">
-                    <strong>Liaquat Ali</strong><br>
-                    <span>Senior Partner</span>
-                </div>
-                <div class="team-card">
-                    <strong>Saleem Shaikh</strong><br>
-                    <span>Senior Tax Advisor</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="location-section">
-            <div class="address-info">
-                <h2 style="color: var(--primary-red);">📍 Office Location</h2>
-                <p><strong>Suite M-65, Munir Shoppers Paradise,</strong><br>Block-17, Gulistan-e-Johar, Karachi.<br><br><strong>Near Perfume Chowk</strong></p>
-            </div>
-            <div class="map-box">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.123456789!2d67.123456789!3d24.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDA3JzM0LjQiTiA2N8KwMDcnMzQuNCJF!5e0!3m2!1sen!2spk!4v1625000000000!5m2!1sen!2spk" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </div>
-
-        <div class="contact-container">
-            <div class="contact-card">
-                <strong>Assistant Tax Consultant</strong>
-                <h4>Syed Naveed Khalid</h4>
-                <a href="https://wa.me/923340207222" class="whatsapp-link-btn" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-            </div>
-            <div class="contact-card">
-                <strong>Tax Advisor</strong>
-                <h4>Uzair</h4>
-                <a href="https://wa.me/923312999202" class="whatsapp-link-btn" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-            </div>
-            <div class="contact-card">
-                <strong>Senior Partner</strong>
-                <h4>Liaquat Ali</h4>
-                <a href="https://wa.me/923014789681" class="whatsapp-link-btn" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-            </div>
-            <div class="contact-card">
-                <strong>Senior Tax Advisor</strong>
-                <h4>Saleem Shaikh</h4>
-                <a href="https://wa.me/923463134415" class="whatsapp-link-btn" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="contact-container">
-    <h2>Client Inquiry Form</h2>
-    <p>Apna masla niche likhein, hamari team jald raabta karegi.</p>
-    
-    <form id="taxForm">
-        <label>Full Name *</label>
-        <input type="text" id="name" placeholder="Apna poora naam likhein" required>
-
-        <label>WhatsApp Number *</label>
-        <input type="tel" id="phone" placeholder="03XXXXXXXXX" required>
-
-        <label>Service Needed</label>
-        <select id="service">
-            <option value="Income Tax (FBR)">Income Tax Filing (FBR)</option>
-            <option value="Sales Tax (SRB/FBR)">Sales Tax (SRB/FBR)</option>
-            <option value="Company Registration (SECP)">Company Registration (SECP)</option>
-            <option value="Trade Mark/Logo">Trade Mark / Logo Registration</option>
-            <option value="Other">Koi aur masla (Other)</option>
-        </select>
-
-        <label>Short Message / Problem</label>
-        <textarea id="message" rows="4" placeholder="Apna sawal yahan likhein..."></textarea>
-
-        <button type="button" onclick="sendToWhatsApp()">Submit via WhatsApp</button>
-    </form>
+<div class="address-bar">
+    Suite M-65, Munir Shoppers Paradise, Gulistan-e-Johar, Karachi.
 </div>
 
-<style>
-    .contact-container {
-        max-width: 500px;
-        margin: 20px auto;
-        padding: 25px;
-        background: #fdfdfd;
-        border-radius: 10px;
-        box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
-        font-family: Arial, sans-serif;
-        border-top: 5px solid #b8860b; /* Gold Border like your logo */
-    }
-    h2 { color: #002D62; text-align: center; margin-bottom: 5px; }
-    p { text-align: center; color: #666; font-size: 14px; margin-bottom: 20px; }
-    label { display: block; margin: 10px 0 5px; font-weight: bold; color: #333; }
-    input, select, textarea {
-        width: 100%;
-        padding: 12px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-sizing: border-box;
-    }
-    button {
-        width: 100%;
-        padding: 15px;
-        background: #25D366; /* WhatsApp Green */
-        color: white;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-    button:hover { background: #128C7E; }
-</style>
+<div class="container">
+    <center><h2 class="section-title">Our Services</h2></center>
+    <div class="services-grid">
+        <div class="service-card">
+            <h3>Income Tax</h3>
+            <ul>
+                <li>Annual Returns Filing</li>
+                <li>IRIS 3.0 Support</li>
+                <li>Tax Advisory</li>
+            </ul>
+        </div>
+        <div class="service-card">
+            <h3>Sales Tax</h3>
+            <ul>
+                <li>FBR & SRB Registration</li>
+                <li>Monthly Filing</li>
+                <li>Custom Rebate & DLTL</li>
+            </ul>
+        </div>
+        <div class="service-card">
+            <h3>Registrations</h3>
+            <ul>
+                <li>SECP Compliance</li>
+                <li>Chamber of Commerce</li>
+                <li>Trade Mark & Logo</li>
+            </ul>
+        </div>
+    </div>
+</div>
 
-<script>
-function sendToWhatsApp() {
-    // Apka WhatsApp Number yahan likhein (baghair + ya 00 ke)
-    const myNumber = "923340207222"; 
+<section class="why-us">
+    <h2>WHY CHOOSE US?</h2>
+    <p>FBR & SECP Authorized | Fast & Confidential Process | Decades of Experience</p>
+</section>
 
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
-    const service = document.getElementById('service').value;
-    const msg = document.getElementById('message').value;
+<section class="contact-footer">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-grid">
+        <div class="contact-info">
+            <strong>Liaquat Ali</strong><br>
+            0301-4789681
+        </div>
+        <div class="contact-info">
+            <strong>Syed Naveed Khalid</strong><br>
+            Assistant Tax Consultant<br>
+            0334-0207222
+        </div>
+        <div class="contact-info">
+            <strong>Uzair</strong><br>
+            Tax Advisor<br>
+            0331-2999202
+        </div>
+        <div class="contact-info">
+            <strong>Saleem Shaikh</strong><br>
+            Senior Tax Advisor<br>
+            0346-3134415
+        </div>
+    </div>
+</section>
 
-    if(name == "" || phone == "") {
-        alert("Meharbani karke Naam aur Number zaroor likhein.");
-        return;
-    }
+<a href="https://wa.me/923312999202" class="wa-float" target="_blank">
+    💬 WhatsApp Us
+</a>
 
-    const finalMessage = `*New Inquiry - Noor Associates*%0A%0A` +
-        `*Name:* ${name}%0A` +
-        `*Phone:* ${phone}%0A` +
-        `*Service:* ${service}%0A` +
-        `*Message:* ${msg}`;
+<footer style="text-align: center; padding: 20px; background: #222; color: #888; font-size: 0.8em;">
+    &copy; 2026 Noor Associates. Professional Tax & BPO Advisory.
+</footer>
 
-    const whatsappUrl = `https://wa.me/${myNumber}?text=${finalMessage}`;
-    window.open(whatsappUrl, '_blank');
-}
-</script>
-
-    <footer>
-        <h2 style="color: white;">NOOR ASSOCIATES</h2>
-        <p>© 2026 Noor Associates - Karachi, Pakistan.</p>
-    </footer>
-
-    <script>
-        function sendVerificationRequest() {
-            var val = document.getElementById('verify_id').value;
-            if(val == "") { alert("Please enter a number!"); return; }
-            var msg = "Assalam-o-Alaikum Noor Associates, please verify status for: " + val;
-            window.open("https://wa.me/923340207222?text=" + encodeURIComponent(msg), "_blank");
-        }
-    </script>
 </body>
 </html>
