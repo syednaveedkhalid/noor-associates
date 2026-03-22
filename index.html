@@ -10,6 +10,7 @@
             --gold: #c5a059;
             --white: #ffffff;
             --bg: #f4f7f9;
+            --red: #d32f2f; /* Original Poster Red */
         }
 
         body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background: var(--bg); color: #333; line-height: 1.6; }
@@ -21,42 +22,93 @@
         header { background: var(--navy); color: white; padding: 60px 20px; text-align: center; border-bottom: 5px solid var(--gold); }
         .logo-text { font-size: 3em; font-weight: 900; color: var(--gold); margin: 0; }
 
+        /* Special Discount Banner */
+        .promo-banner {
+            background: var(--red);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            border-bottom: 2px solid yellow;
+        }
+
+        /* Floating Discount Badge */
+        .discount-badge {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: yellow;
+            color: var(--red);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 900;
+            border: 3px dashed var(--red);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 2000;
+            animation: pulse 2s infinite;
+            text-align: center;
+            line-height: 1;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
         .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
         .section-title { text-align: center; color: var(--navy); font-size: 2em; font-weight: 800; text-transform: uppercase; margin-bottom: 30px; border-bottom: 4px solid var(--gold); display: inline-block; }
 
-        /* Quick Links / Verification */
-        .verify-box { background: white; padding: 20px; border-radius: 8px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; border: 1px solid #ddd; }
-        .v-btn { background: var(--gold); color: var(--navy); padding: 10px 20px; text-decoration: none; font-weight: 800; border-radius: 5px; font-size: 0.8em; }
-
-        /* Services */
+        /* Services with Hover Effect */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { background: white; padding: 25px; border-top: 5px solid var(--gold); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .card { 
+            background: white; 
+            padding: 25px; 
+            border-top: 5px solid var(--gold); 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            border-top-color: var(--red);
+        }
         .card h3 { color: var(--navy); font-weight: 800; }
 
-        /* FAQ Section */
-        .faq { background: #eee; padding: 40px 20px; text-align: center; }
-        .faq-item { max-width: 700px; margin: 10px auto; background: white; padding: 15px; text-align: left; border-left: 5px solid var(--gold); font-weight: 600; }
-
-        /* Form */
+        /* Contact Form */
         .form-section { background: var(--navy); color: white; padding: 50px 20px; text-align: center; }
         .contact-form { max-width: 500px; margin: auto; background: white; padding: 30px; border-radius: 8px; text-align: left; }
         .contact-form input, .contact-form select, .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 2px solid var(--gold); border-radius: 4px; box-sizing: border-box; font-weight: 600; }
-        .submit-btn { background: var(--navy); color: var(--gold); padding: 15px; border: none; font-weight: 800; cursor: pointer; width: 100%; text-transform: uppercase; }
+        .submit-btn { background: var(--red); color: white; padding: 15px; border: none; font-weight: 800; cursor: pointer; width: 100%; text-transform: uppercase; }
 
-        /* Team & Map */
-        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 20px; }
         .team-card { background: white; padding: 15px; border: 1px solid var(--gold); text-align: center; }
-        
         footer { background: #000; color: #777; text-align: center; padding: 20px; font-weight: bold; }
     </style>
 </head>
 <body>
 
+<div class="promo-banner">
+    📢 EID SPECIAL OFFER: 25% TO 30% DISCOUNT ON ALL SERVICES! 🌙
+</div>
+
+<div class="discount-badge">
+    <span>UP TO</span>
+    <span style="font-size: 1.2rem;">30%</span>
+    <span>OFF</span>
+</div>
+
 <nav>
     <a href="#services">Services</a>
     <a href="#verify">Verify NTN</a>
     <a href="#contact">Contact</a>
-    <a href="#team">Our Team</a>
 </nav>
 
 <header>
@@ -64,15 +116,8 @@
     <p style="font-weight: 800;">YOUR TRUSTED TAX & CORPORATE PARTNER</p>
 </header>
 
-<div class="container" id="verify">
-    <center><h2 class="section-title">Quick Verification</h2></center>
-    <div class="verify-box">
-        <a href="https://iris.fbr.gov.pk/infosys/type.aspx?t=ntn" target="_blank" class="v-btn">FBR NTN INQUIRY</a>
-        <a href="https://e.fbr.gov.pk/atlinter.aspx" target="_blank" class="v-btn">ACTIVE TAXPAYER LIST (ATL)</a>
-        <a href="https://srb.gos.pk/" target="_blank" class="v-btn">SRB PORTAL</a>
-    </div>
-
-    <center><h2 class="section-title" id="services">Our Services</h2></center>
+<div class="container" id="services">
+    <center><h2 class="section-title">Our Services</h2></center>
     <div class="grid">
         <div class="card">
             <h3>TAXATION</h3>
@@ -89,12 +134,6 @@
     </div>
 </div>
 
-<section class="faq">
-    <h2 class="section-title">Frequently Asked Questions</h2>
-    <div class="faq-item">Q: What documents are needed for NTN?<br><span style="color:#666; font-size:0.9em;">A: CNIC, Electricity Bill, and Mobile Number.</span></div>
-    <div class="faq-item">Q: How long does SECP registration take?<br><span style="color:#666; font-size:0.9em;">A: Typically 3 to 7 working days.</span></div>
-</section>
-
 <section class="form-section" id="contact">
     <h2 style="color: var(--gold); font-weight: 800;">FREE CONSULTATION</h2>
     <div class="contact-form">
@@ -103,29 +142,16 @@
             <input type="text" id="phone" placeholder="Phone Number" required>
             <select id="targetWa">
                 <option value="923014789681">Liaquat Ali</option>
-                <option value="923340207222">Naveed Khalid</option>
                 <option value="923312999202">Uzair</option>
                 <option value="923463134415">Saleem Shaikh</option>
             </select>
             <textarea id="msg" rows="3" placeholder="Describe your requirement..."></textarea>
-            <button type="button" onclick="sendInquiry()" class="submit-btn">CHAT ON WHATSAPP 💬</button>
+            <button type="button" onclick="sendInquiry()" class="submit-btn">GET DISCOUNT ON WHATSAPP 💬</button>
         </form>
     </div>
 </section>
 
-<div class="container" id="team">
-    <center><h2 class="section-title">Contact Our Experts</h2></center>
-    <div class="team-grid">
-        <div class="team-card"><strong>LIAQUAT ALI</strong><br><span>Associate</span><br><a href="https://wa.me/923014789681" style="color:#25d366; text-decoration:none; font-weight:800;">0301-4789681</a></div>
-        <div class="team-card"><strong>UZAIR</strong><br><span>Advisor</span><br><a href="https://wa.me/923312999202" style="color:#25d366; text-decoration:none; font-weight:800;">0331-2999202</a></div>
-        <div class="team-card"><strong>SALEEM SHAIKH</strong><br><span>Senior Advisor</span><br><a href="https://wa.me/923463134415" style="color:#25d366; text-decoration:none; font-weight:800;">0346-3134415</a></div>
-    </div>
-
-    <center><h2 class="section-title" style="margin-top:40px;">Find Us</h2></center>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.123456789012!2d67.1234567!3d24.9123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDU0JzQ0LjQiTiA2N8KwMDcnMjQuNCJF!5e0!3m2!1sen!2spk!4v1620000000000!5m2!1sen!2spk" width="100%" height="300" style="border:0; margin-top:20px;" allowfullscreen="" loading="lazy"></iframe>
-</div>
-
-<footer>&copy; 2026 NOOR ASSOCIATES | Gulistan-e-Johar, Karachi</footer>
+<footer>© 2026 NOOR ASSOCIATES | Gulistan-e-Johar, Karachi</footer>
 
 <script>
 function sendInquiry() {
@@ -134,7 +160,7 @@ function sendInquiry() {
     const m = document.getElementById('msg').value;
     const target = document.getElementById('targetWa').value;
     if(n==""||p==""){alert("Please fill name/phone!"); return;}
-    const text = `*Inquiry from Website*%0A*Client:* ${n}%0A*Phone:* ${p}%0A*Query:* ${m}`;
+    const text = `*Inquiry from Website*%0A*Offer:* 30% Discount%0A*Client:* ${n}%0A*Phone:* ${p}%0A*Query:* ${m}`;
     window.open(`https://wa.me/${target}?text=${text}`, '_blank');
 }
 </script>
