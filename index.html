@@ -3,280 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noor Associates | Tax & Corporate Consultants Karachi</title>
+    <title>Noor Associates | Tax & Corporate Consultants</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root {
-            --navy: #0a1d37;
-            --gold: #c5a059;
-            --white: #ffffff;
-            --bg: #f4f7f9;
-            --red: #d32f2f;
-            --green: #25d366;
-        }
-
-        * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        :root { --navy: #0a1d37; --gold: #c5a059; --white: #ffffff; --light: #f4f7f6; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; color: #333; background: var(--light); }
         
-        body { 
-            font-family: 'Segoe UI', Roboto, Arial, sans-serif; 
-            margin: 0; padding: 0; background: var(--bg); color: #333; line-height: 1.6; 
-        }
+        /* Header & Nav */
+        header { background: var(--navy); color: var(--white); padding: 1rem; text-align: center; position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid var(--gold); }
+        nav a { color: var(--gold); text-decoration: none; margin: 0 15px; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
+
+        /* Hero Section */
+        .hero { background: linear-gradient(rgba(10,29,55,0.9), rgba(10,29,55,0.9)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80'); 
+                background-size: cover; color: white; padding: 80px 20px; text-align: center; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; color: var(--gold); }
         
-        nav { 
-            background: var(--navy); padding: 15px; text-align: center; position: sticky; 
-            top: 0; z-index: 1000; border-bottom: 3px solid var(--gold);
-        }
-        nav a { 
-            color: var(--gold); text-decoration: none; margin: 0 15px; 
-            font-weight: 700; text-transform: uppercase; font-size: 0.85em; 
-        }
+        /* Specialized Solutions Grid */
+        .solutions-section { padding: 50px 20px; max-width: 1200px; margin: auto; }
+        .section-title { text-align: center; color: var(--navy); margin-bottom: 40px; font-size: 2rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: white; padding: 25px; border-radius: 12px; border-top: 5px solid var(--gold); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .card h3 { color: var(--navy); border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .card ul { list-style: none; padding: 0; }
+        .card li { padding: 8px 0; border-bottom: 1px solid #fafafa; font-size: 0.95rem; }
+        .card li::before { content: "👁️‍🗨️"; margin-right: 10px; }
 
-        header { 
-            background: linear-gradient(rgba(10, 29, 55, 0.85), rgba(10, 29, 55, 0.85)), 
-                        url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover; background-position: center; color: white; 
-            padding: 100px 20px; text-align: center; border-bottom: 5px solid var(--gold); 
-        }
-        .logo-text { font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 900; color: var(--gold); margin: 0; }
+        /* Cities Banner */
+        .city-banner { background: var(--navy); color: white; padding: 20px; border-radius: 10px; margin-top: 30px; text-align: center; border: 1px dashed var(--gold); }
 
-        .promo-banner { background: var(--red); color: white; text-align: center; padding: 12px; font-weight: bold; }
-        
-        .discount-badge {
-            position: fixed; bottom: 90px; right: 20px; background: #ffff00; color: var(--red);
-            width: 85px; height: 85px; border-radius: 50%; display: flex; flex-direction: column;
-            align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 900;
-            border: 3px dashed var(--red); box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 2000;
-            animation: pulse 2s infinite; text-align: center;
-        }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+        /* Team Section */
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 40px; }
+        .team-card { background: white; padding: 20px; text-align: center; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .wa-btn { background: #25d366; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; display: inline-block; margin-top: 10px; font-weight: bold; }
 
-        .floating-wa {
-            position: fixed; bottom: 20px; right: 20px; background: var(--green); color: white;
-            width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center;
-            justify-content: center; font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 2000; text-decoration: none;
-        }
-
-        .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
-        .section-title { text-align: center; color: var(--navy); font-size: 2.2em; font-weight: 800; text-transform: uppercase; margin-bottom: 40px; position: relative; padding-bottom: 15px; }
-        .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: var(--gold); }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .card { background: white; padding: 30px; border-top: 5px solid var(--gold); box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; border-radius: 4px; }
-
-        /* Map Styling Fixed */
-        .map-wrapper { 
-            position: relative; 
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0; 
-            overflow: hidden; 
-            border-radius: 15px; 
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            background: #eee;
-        }
-        .map-wrapper iframe { 
-            position: absolute; 
-            top: 0; left: 0; width: 100%; height: 100%; 
-            border: 0; 
-        }
-
-        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-        .team-card { background: white; padding: 25px; border-radius: 10px; text-align: center; border: 1px solid #eee; }
-        .wa-btn { display: inline-block; background: var(--green); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: bold; }
-
-        .form-section { background: #0a1d37; padding: 80px 20px; }
-        .contact-container { max-width: 900px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; background: white; border-radius: 15px; overflow: hidden; }
-        .contact-info { background: var(--gold); color: var(--navy); padding: 40px; }
-        .contact-form { padding: 40px; }
-        .contact-form input, .contact-form select, .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px; }
-        .submit-btn { background: var(--red); color: white; padding: 15px; border: none; font-weight: 800; cursor: pointer; width: 100%; text-transform: uppercase; border-radius: 5px; }
-
-        footer { background: #000; color: #888; text-align: center; padding: 30px; border-top: 2px solid var(--gold); }
-
-        @media (max-width: 768px) { .contact-container { grid-template-columns: 1fr; } }
+        /* Footer */
+        footer { background: var(--navy); color: white; text-align: center; padding: 20px; margin-top: 50px; }
     </style>
 </head>
 <body>
 
-<div class="promo-banner">📢 EID SPECIAL: 30% OFF ON INCOME TAX FILING</div>
-<div class="discount-badge"><span>SALE</span><br><span style="font-size: 1.4rem;">30%</span><br><span>OFF</span></div>
-<a href="https://wa.me/923340207222" class="floating-wa" target="_blank">💬</a>
-
-<nav>
-    <a href="#services">Services</a>
-    <a href="#team">Experts</a>
-    <a href="#location">Location</a>
-    <a href="#contact">Contact</a>
-</nav>
-
 <header>
-    <h1 class="logo-text">NOOR ASSOCIATES</h1>
-    <p>TRUSTED TAX & CORPORATE PARTNERS IN KARACHI</p>
+    <div style="font-size: 1.5rem; font-weight: bold; letter-spacing: 2px;">NOOR ASSOCIATES</div>
+    <nav>
+        <a href="#solutions">Solutions</a>
+        <a href="#team">Experts</a>
+        <a href="https://wa.me/923340207222">Contact</a>
+    </nav>
 </header>
 
-<section class="container" id="services">
-    <h2 class="section-title">Our Expertise</h2>
+<section class="hero">
+    <h1>Your Trusted Tax & Corporate Partner</h1>
+    <p>Providing Expert Solutions for FBR, SECP, and Sales Tax Technical Issues</p>
+</section>
+
+<section id="solutions" class="solutions-section">
+    <h2 class="section-title">Specialized Corporate Solutions</h2>
+    
     <div class="grid">
+        <!-- Card 1: FBR Technical -->
         <div class="card">
-            <h3>Taxation</h3>
-            <p>NTN Registration, FBR Annual Returns, Wealth Statements, and Sales Tax (STRN) management.</p>
+            <h3>📊 FBR Annex & HS Codes</h3>
+            <ul>
+                <li>Annex-J Negative Solution</li>
+                <li>Annex J With HS Code Issue</li>
+                <li>HS CODE Error + 8B Available</li>
+                <li>Annex H-1 Negative Value (Without 8B)</li>
+                <li>Annex K (Electricity Units/Discos)</li>
+                <li>Invoices Linking (Non-POS)</li>
+            </ul>
         </div>
+
+        <!-- Card 2: Business Changes -->
         <div class="card">
-            <h3>Corporate</h3>
-            <p>SECP Company Registration (PVT Ltd, SMC), Partnership Deeds, and Chamber of Commerce help.</p>
+            <h3>🏢 SECP & Registration</h3>
+            <ul>
+                <li>SECP 2-Year-Old Companies (Unlimited)</li>
+                <li>Amendment in Sales Tax Registration</li>
+                <li>Name, Activity, & Address Change</li>
+                <li>8B Enable / Disable</li>
+                <li>Manufacturing & Non-Manufacturing</li>
+                <li>Provisional Invoices in Locked Annex-A</li>
+            </ul>
         </div>
+
+        <!-- Card 3: Special Filings -->
         <div class="card">
-            <h3>Legal & IP</h3>
-            <p>Trademark, Copyright, Brand Registration, and specialized legal consultancy for businesses.</p>
+            <h3>⚖️ Advanced Tax Filings</h3>
+            <ul>
+                <li>7E Filing (Without Password)</li>
+                <li>Wealth Revision (2014-2025)</li>
+                <li>Return Revision (Sales/Income Tax)</li>
+                <li>DNFBP Certificate</li>
+                <li>1.5% / 4.5% Authentic Challans</li>
+                <li>Annex H Refund Solutions</li>
+            </ul>
         </div>
+    </div>
+
+    <!-- Overseas Section -->
+    <div class="city-banner">
+        <h3>🌍 Overseas Challan Services (Non-Resident / Local)</h3>
+        <p>Available for: Karachi, Lahore, Islamabad, Pindi, Sargodha, Bahawalpur, Multan, Abbotabad, Sialkot, Hyderabad, Peshawar.</p>
     </div>
 </section>
 
-<!-- Updated Google Map Section -->
-<section class="container" id="location">
-    <h2 class="section-title">Visit Our Office</h2>
-    <div class="map-wrapper">
-        <!-- New Embed URL for Noor & Noor Associates Karachi -->
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14473.3134505141!2d67.1205995!3d24.911364!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338e1f52153b1%3A0xc04bdb8adb596617!2sNoor%20%26%20Noor%20Associates!5e0!3m2!1sen!2spk!4v1715000000000!5m2!1sen!2spk" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-    </div>
-    <div style="text-align: center; margin-top: 15px;">
-        <a href="https://maps.app.goo.gl/yXNfH86C78qC77fK7" target="_blank" style="color: var(--navy); font-weight: bold; text-decoration: underline;">Open in Google Maps App</a>
-    </div>
-</section>
-
-<div style="background: #edf2f7;">
-    <div class="container" id="team">
-        <h2 class="section-title">Consult with an Expert</h2>
-        <div class="team-grid">
-    <!-- Naveed Khalid (Updated to Senior Tax Consultant & Advisor) -->
-     <!-- Specialized Solutions Section -->
-<section id="solutions" style="padding: 50px 20px; background-color: #f4f7f6;">
-    <div style="max-width: 1100px; margin: auto;">
-        <h2 style="text-align: center; color: #0a1d37; margin-bottom: 40px;">Specialized FBR & Corporate Solutions</h2>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-            
-            <!-- Technical Tax Solutions -->
-            <div style="background: white; padding: 20px; border-radius: 10px; border-left: 5px solid #c5a059; shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                <h3 style="color: #0a1d37;">📊 Annex & HS Code Fixes</h3>
-                <ul style="list-style: none; padding: 0; line-height: 1.8;">
-                    <li>✅ Annex-J Negative & HS Code Issues</li>
-                    <li>✅ HS CODE Error + 8B Solutions</li>
-                    <li>✅ 5-Time Balance Sheet Error (without 8B)</li>
-                    <li>✅ Annex H-1 Negative Value Fix</li>
-                    <li>✅ Annex K (Electricity Units as per DISCOs)</li>
-                    <li>✅ Annex A/C Unlock & Invoices Linking</li>
-                </ul>
-            </div>
-
-            <!-- Business & SECP Services -->
-            <div style="background: white; padding: 20px; border-radius: 10px; border-left: 5px solid #c5a059;">
-                <h3 style="color: #0a1d37;">🏢 SECP & Business Updates</h3>
-                <ul style="list-style: none; padding: 0; line-height: 1.8;">
-                    <li>✅ SECP 2-Year-Old Companies (Unlimited Available)</li>
-                    <li>✅ Amendment in Sales Tax Registration</li>
-                    <li>✅ Business Name, Activity & Address Change</li>
-                    <li>✅ Manufacturing / Non-Manufacturing Status</li>
-                    <li>✅ Addition of Provisional Invoices (Locked Annex-A)</li>
-                </ul>
-            </div>
-
-            <!-- Special Filings -->
-            <div style="background: white; padding: 20px; border-radius: 10px; border-left: 5px solid #c5a059;">
-                <h3 style="color: #0a1d37;">⚖️ Special Filings & Challans</h3>
-                <ul style="list-style: none; padding: 0; line-height: 1.8;">
-                    <li>✅ 7E Filing (Without Password)</li>
-                    <li>✅ Wealth Revision (2014-2025)</li>
-                    <li>✅ DNFBP Certification</li>
-                    <li>✅ 1.5% / 4.5% Authentic Challans</li>
-                    <li>✅ Overseas Challan (Non-Resident/Local)</li>
-                </ul>
-            </div>
-
+<section id="team" class="solutions-section" style="background: #eef2f3; border-radius: 20px;">
+    <h2 class="section-title">Our Expert Team</h2>
+    <div class="team-grid">
+        <div class="team-card">
+            <h4>Naveed Khalid</h4>
+            <p>Senior Tax Consultant & Advisor</p>
+            <a href="https://wa.me/923340207222" class="wa-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
-
-        <!-- City List Banner -->
-        <div style="margin-top: 30px; background: #0a1d37; color: white; padding: 15px; border-radius: 8px; text-align: center;">
-            <p><strong>📍 Overseas Challan Services Available for:</strong> Karachi, Lahore, Islamabad, Pindi, Multan, Sialkot, Peshawar, & more.</p>
+        <div class="team-card">
+            <h4>Liaquat Ali</h4>
+            <p>Corporate Associate</p>
+            <a href="https://wa.me/923014789681" class="wa-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
-    </div>
-</section>
-    <div class="team-card">
-        <h4>Naveed Khalid</h4>
-        <p>Tax Consultant & Advisor</p>
-        <a href="https://wa.me/923340207222" class="wa-btn">WhatsApp</a>
-    </div>
-
-    <!-- Liaquat Ali -->
-    <div class="team-card">
-        <h4>Liaquat Ali</h4>
-        <p>Corporate Associate</p>
-        <a href="https://wa.me/923014789681" class="wa-btn">WhatsApp</a>
-    </div>
-
-    <!-- Uzair (Updated to Tax Consultant) -->
-    <div class="team-card">
-        <h4>Uzair</h4>
-        <p>senior Tax Consultant</p>
-        <a href="https://wa.me/923312999202" class="wa-btn">WhatsApp</a>
-    </div>
-
-    <!-- Saleem Shaikh -->
-    <div class="team-card">
-        <h4>Saleem Shaikh</h4>
-        <p>Senior Advisor</p>
-        <a href="https://wa.me/923463134415" class="wa-btn">WhatsApp</a>
-    </div>
-</div>
-            
-
-<section class="form-section" id="contact">
-    <div class="contact-container">
-        <div class="contact-info">
-            <h2>Get In Touch</h2>
-            <p>Need a quick quote? Fill the form and we will WhatsApp you immediately.</p>
-            <p>📍 Shop# 12, Johar Complex, Gulistan-e-Johar, Karachi</p>
-            <p>📞 +92 334 0207222</p>
+        <div class="team-card">
+            <h4>Uzair</h4>
+            <p>Tax Consultant</p>
+            <a href="https://wa.me/923312999202" class="wa-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
-        <div class="contact-form">
-            <form id="noorForm">
-                <input type="text" id="name" placeholder="Full Name" required>
-                <input type="text" id="phone" placeholder="WhatsApp Number" required>
-                <select id="serviceType">
-                    <option>Income Tax Filing</option>
-                    <option>Company Registration</option>
-                    <option>Sales Tax / STRN</option>
-                    <option>Other Legal Matter</option>
-                </select>
-                <textarea id="msg" rows="3" placeholder="Explain your requirement..."></textarea>
-                <button type="button" onclick="sendInquiry()" class="submit-btn">Send To WhatsApp 💬</button>
-            </form>
+        <div class="team-card">
+            <h4>Saleem Shaikh</h4>
+            <p>Senior Advisor</p>
+            <a href="https://wa.me/923463134415" class="wa-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
     </div>
 </section>
 
 <footer>
-    <p>© 2026 NOOR ASSOCIATES | Gulistan-e-Johar, Karachi</p>
+    <p>&copy; 2026 Noor Associates. All Rights Reserved.</p>
+    <p>Shop# 12, Johar Complex, Gulistan-e-Johar, Karachi.</p>
 </footer>
-
-<script>
-function sendInquiry() {
-    const n = document.getElementById('name').value;
-    const p = document.getElementById('phone').value;
-    const s = document.getElementById('serviceType').value;
-    const m = document.getElementById('msg').value;
-    
-    if(n == "" || p == ""){ alert("Fill required details!"); return; }
-    
-    const text = `*New Inquiry*%0A*Name:* ${n}%0A*Phone:* ${p}%0A*Service:* ${s}%0A*Query:* ${m}`;
-    window.open(`https://wa.me/923340207222?text=${text}`, '_blank');
-}
-</script>
 
 </body>
 </html>
