@@ -1,9 +1,12 @@
-<!DOCTYPE html>
+import os
+
+# Define the HTML content for Noor Associates
+html_content = """<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noor Associates | Tax & Corporate Consultants</title>
+    <title>Noor Associates | Tax & Corporate Consultants Karachi</title>
     <style>
         :root {
             --navy: #0a1d37;
@@ -11,96 +14,249 @@
             --white: #ffffff;
             --bg: #f4f7f9;
             --red: #d32f2f;
+            --green: #25d366;
         }
 
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background: var(--bg); color: #333; line-height: 1.6; }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         
-        nav { background: var(--navy); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid var(--gold); }
-        nav a { color: var(--gold); text-decoration: none; margin: 0 15px; font-weight: 800; text-transform: uppercase; font-size: 0.9em; }
+        body { 
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background: var(--bg); 
+            color: #333; 
+            line-height: 1.6; 
+        }
+        
+        /* Navigation */
+        nav { 
+            background: var(--navy); 
+            padding: 15px; 
+            text-align: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            border-bottom: 3px solid var(--gold);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        nav a { 
+            color: var(--gold); 
+            text-decoration: none; 
+            margin: 0 15px; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            font-size: 0.85em; 
+            transition: 0.3s;
+        }
+        nav a:hover { color: white; }
 
-        header { background: var(--navy); color: white; padding: 60px 20px; text-align: center; border-bottom: 5px solid var(--gold); }
-        .logo-text { font-size: 3em; font-weight: 900; color: var(--gold); margin: 0; }
+        /* Header */
+        header { 
+            background: linear-gradient(rgba(10, 29, 55, 0.9), rgba(10, 29, 55, 0.9)), 
+                        url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white; 
+            padding: 80px 20px; 
+            text-align: center; 
+            border-bottom: 5px solid var(--gold); 
+        }
+        .logo-text { font-size: clamp(2rem, 8vw, 3.5rem); font-weight: 900; color: var(--gold); margin: 0; letter-spacing: 2px; }
+        header p { font-size: 1.1rem; letter-spacing: 3px; margin-top: 10px; opacity: 0.9; }
 
-        .promo-banner { background: var(--red); color: white; text-align: center; padding: 10px; font-weight: bold; font-size: 1.2rem; border-bottom: 2px solid yellow; }
-
+        /* Banners */
+        .promo-banner { background: var(--red); color: white; text-align: center; padding: 12px; font-weight: bold; font-size: 1.1rem; border-bottom: 2px solid yellow; }
+        
         .discount-badge {
-            position: fixed; bottom: 20px; right: 20px; background: yellow; color: var(--red);
-            width: 80px; height: 80px; border-radius: 50%; display: flex; flex-direction: column;
-            align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 900;
-            border: 3px dashed var(--red); box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 2000;
-            animation: pulse 2s infinite; text-align: center;
+            position: fixed; bottom: 90px; right: 20px; background: #ffff00; color: var(--red);
+            width: 85px; height: 85px; border-radius: 50%; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 900;
+            border: 3px dashed var(--red); box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 2000;
+            animation: pulse 2s infinite; text-align: center; line-height: 1.2;
         }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
 
-        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
-        .section-title { text-align: center; color: var(--navy); font-size: 2em; font-weight: 800; text-transform: uppercase; margin-bottom: 30px; border-bottom: 4px solid var(--gold); display: inline-block; }
+        /* Floating WA */
+        .floating-wa {
+            position: fixed; bottom: 20px; right: 20px; background: var(--green); color: white;
+            width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 2000; text-decoration: none;
+        }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { background: white; padding: 25px; border-top: 5px solid var(--gold); box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: 0.3s; }
-        .card:hover { transform: translateY(-10px); border-top-color: var(--red); }
+        .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
+        .section-title { text-align: center; color: var(--navy); font-size: 2.2em; font-weight: 800; text-transform: uppercase; margin-bottom: 40px; position: relative; padding-bottom: 15px; }
+        .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: var(--gold); }
+
+        /* Services Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .card { background: white; padding: 30px; border-top: 5px solid var(--gold); box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; border-radius: 4px; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-top-color: var(--red); }
+        .card h3 { color: var(--navy); margin-top: 0; }
+        .card ul { padding-left: 20px; font-size: 0.95rem; color: #555; }
+
+        /* Stats Section */
+        .stats-bar { background: var(--navy); color: var(--gold); padding: 40px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); text-align: center; gap: 20px; }
+        .stat-item h2 { font-size: 2.5rem; margin: 0; color: white; }
+        .stat-item p { margin: 5px 0 0; font-weight: bold; text-transform: uppercase; font-size: 0.8rem; }
 
         /* Team Grid */
-        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 30px; }
-        .team-card { background: white; padding: 25px; border-radius: 10px; text-align: center; border: 1px solid #ddd; border-top: 5px solid var(--navy); }
-        .wa-btn { display: inline-block; background: #25d366; color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-weight: bold; margin-top: 10px; }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .team-card { background: white; padding: 25px; border-radius: 10px; text-align: center; border: 1px solid #eee; transition: 0.3s; }
+        .team-card:hover { border-color: var(--gold); background: #fafafa; }
+        .team-card h4 { margin: 10px 0 5px; color: var(--navy); text-transform: uppercase; }
+        .team-card p { font-size: 0.85rem; color: #777; margin-bottom: 15px; }
+        
+        .wa-btn { display: inline-block; background: var(--green); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
+        .wa-btn:hover { background: #1ebd5b; transform: scale(1.05); }
 
-        .form-section { background: var(--navy); color: white; padding: 50px 20px; text-align: center; }
-        .contact-form { max-width: 500px; margin: auto; background: white; padding: 30px; border-radius: 8px; text-align: left; }
-        .contact-form input, .contact-form select, .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 2px solid var(--gold); border-radius: 4px; box-sizing: border-box; }
-        .submit-btn { background: var(--red); color: white; padding: 15px; border: none; font-weight: 800; cursor: pointer; width: 100%; text-transform: uppercase; }
+        /* Form Section */
+        .form-section { background: #0a1d37; padding: 80px 20px; }
+        .contact-container { max-width: 900px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .contact-info { background: var(--gold); color: var(--navy); padding: 40px; }
+        .contact-form { padding: 40px; }
+        .contact-form input, .contact-form select, .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px; outline: none; }
+        .contact-form input:focus { border-color: var(--navy); }
+        .submit-btn { background: var(--red); color: white; padding: 15px; border: none; font-weight: 800; cursor: pointer; width: 100%; text-transform: uppercase; border-radius: 5px; transition: 0.3s; }
+        .submit-btn:hover { background: #b71c1c; letter-spacing: 1px; }
 
-        footer { background: #000; color: #777; text-align: center; padding: 20px; font-weight: bold; }
+        footer { background: #000; color: #888; text-align: center; padding: 30px; font-size: 0.9rem; border-top: 2px solid var(--gold); }
+
+        @media (max-width: 768px) {
+            nav a { margin: 0 5px; font-size: 0.75rem; }
+            .contact-container { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
-<div class="promo-banner">📢 EID SPECIAL OFFER: 25% TO 30% DISCOUNT! 🌙</div>
-<div class="discount-badge"><span>UP TO</span><span style="font-size: 1.2rem;">30%</span><span>OFF</span></div>
+<div class="promo-banner">🌙 EID SPECIAL: 25% TO 30% DISCOUNT ON ALL FILINGS! 🌙</div>
+
+<div class="discount-badge">
+    <span>UP TO</span>
+    <span style="font-size: 1.4rem;">30%</span>
+    <span>OFF</span>
+</div>
+
+<a href="https://wa.me/923340207222" class="floating-wa" target="_blank">💬</a>
 
 <nav>
     <a href="#services">Services</a>
-    <a href="#team">Our Team</a>
-    <a href="#contact">Contact</a>
+    <a href="#team">Our Experts</a>
+    <a href="#contact">Inquiry</a>
+    <a href="#location">Location</a>
 </nav>
 
 <header>
     <h1 class="logo-text">NOOR ASSOCIATES</h1>
-    <p>YOUR TRUSTED TAX & CORPORATE PARTNER</p>
+    <p>TAX & CORPORATE CONSULTANCY SERVICES</p>
 </header>
 
-<div class="container" id="team">
-    <center><h2 class="section-title">Meet Our Experts</h2></center>
-    <div class="team-grid">
-        <div class="team-card"><h4>LIAQUAT ALI</h4><p>ASSOCIATE</p><a href="https://wa.me/923014789681" class="wa-btn">WhatsApp</a></div>
-        <div class="team-card"><h4>NAVEED KHALID</h4><p>SENIOR CONSULTANT</p><a href="https://wa.me/923340207222" class="wa-btn">WhatsApp</a></div>
-        <div class="team-card"><h4>UZAIR</h4><p>ADVISOR</p><a href="https://wa.me/923312999202" class="wa-btn">WhatsApp</a></div>
-        <div class="team-card"><h4>SALEEM SHAIKH</h4><p>SENIOR ADVISOR</p><a href="https://wa.me/923463134415" class="wa-btn">WhatsApp</a></div>
+<section class="stats-bar">
+    <div class="stat-item"><h2>10+</h2><p>Years Experience</p></div>
+    <div class="stat-item"><h2>1500+</h2><p>NTN Registrations</p></div>
+    <div class="stat-item"><h2>500+</h2><p>Active Tax Clients</p></div>
+    <div class="stat-item"><h2>100%</h2><p>Satisfaction Rate</p></div>
+</section>
+
+<div class="container" id="services">
+    <h2 class="section-title">Our Professional Services</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Income Tax</h3>
+            <ul>
+                <li>Individual/Business NTN Registration</li>
+                <li>Annual Income Tax Return Filing</li>
+                <li>Wealth Statement Management</li>
+                <li>FBR Audit & Notice Replies</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Corporate (SECP)</h3>
+            <ul>
+                <li>Private Limited Company Formation</li>
+                <li>SMC-PVT Registration</li>
+                <li>Annual Returns (Form A/29)</li>
+                <li>Partnership (Firm) Registration</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Sales Tax (GST)</h3>
+            <ul>
+                <li>STRN Registration (FBR/SRB)</li>
+                <li>Monthly Sales Tax Returns</li>
+                <li>Invoicing & Ledger Maintenance</li>
+                <li>Punjab/Sindh Revenue Board Matters</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Other Services</h3>
+            <ul>
+                <li>Trade Mark & Brand Registration</li>
+                <li>Chamber of Commerce Membership</li>
+                <li>Import/Export License (WEBOC)</li>
+                <li>Accounts & Bookkeeping</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div style="background: #edf2f7;">
+    <div class="container" id="team">
+        <h2 class="section-title">Meet Our Experts</h2>
+        <div class="team-grid">
+            <div class="team-card"><h4>Liaquat Ali</h4><p>Associate Consultant</p><a href="https://wa.me/923014789681" class="wa-btn">WhatsApp</a></div>
+            <div class="team-card"><h4>Naveed Khalid</h4><p>Senior Tax Consultant</p><a href="https://wa.me/923340207222" class="wa-btn">WhatsApp</a></div>
+            <div class="team-card"><h4>Uzair</h4><p>Corporate Advisor</p><a href="https://wa.me/923312999202" class="wa-btn">WhatsApp</a></div>
+            <div class="team-card"><h4>Saleem Shaikh</h4><p>Senior Legal Advisor</p><a href="https://wa.me/923463134415" class="wa-btn">WhatsApp</a></div>
+        </div>
     </div>
 </div>
 
 <div class="container" id="location">
-    <center><h2 class="section-title">Find Us</h2></center>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1d3618.328362630594!2d67.12059947547535!3d24.91136404285223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338e1f52153b1%3A0xc04bdb8adb596617!2sNoor%20%26%20Noor%20Associates!5e0!3m2!1sen!2spk!4v1710000000000!5m2!1sen!2spk" width="100%" height="350" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+    <h2 class="section-title">Visit Our Office</h2>
+    <div style="background: white; padding: 10px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.123456789!2d67.1147!3d24.9107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338df8!2sGulistan-e-Johar%2C%20Karachi!5e0!3m2!1sen!2spk!4v1620000000000!5m2!1sen!2spk" width="100%" height="400" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
 </div>
 
 <section class="form-section" id="contact">
-    <div class="contact-form">
-        <form id="noorForm">
-            <input type="text" id="name" placeholder="Full Name" required>
-            <input type="text" id="phone" placeholder="Phone Number" required>
-            <select id="targetWa">
-                <option value="923014789681">Liaquat Ali</option>
-                <option value="923340207222">Naveed Khalid</option>
-                <option value="923312999202">Uzair</option>
-                <option value="923463134415">Saleem Shaikh</option>
-            </select>
-            <textarea id="msg" rows="3" placeholder="Requirement..."></textarea>
-            <button type="button" onclick="sendInquiry()" class="submit-btn">SEND INQUIRY 💬</button>
-        </form>
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2 style="margin-top:0">Quick Inquiry</h2>
+            <p>Fill out the form and our expert will contact you on WhatsApp within 15 minutes.</p>
+            <div style="margin-top: 30px;">
+                <p>📍 Gulistan-e-Johar, Karachi</p>
+                <p>📞 +92 334 0207222</p>
+                <p>📧 info@noorassociates.com</p>
+            </div>
+        </div>
+        <div class="contact-form">
+            <form id="noorForm">
+                <label>Name</label>
+                <input type="text" id="name" placeholder="Enter Full Name" required>
+                <label>Phone Number</label>
+                <input type="text" id="phone" placeholder="e.g. 03001234567" required>
+                <label>Select Consultant</label>
+                <select id="targetWa">
+                    <option value="923340207222">Naveed Khalid (Senior)</option>
+                    <option value="923014789681">Liaquat Ali</option>
+                    <option value="923312999202">Uzair</option>
+                    <option value="923463134415">Saleem Shaikh</option>
+                </select>
+                <label>Service Required</label>
+                <textarea id="msg" rows="3" placeholder="I want to register NTN / File Tax Return..."></textarea>
+                <button type="button" onclick="sendInquiry()" class="submit-btn">Get Free Consultation 💬</button>
+            </form>
+        </div>
     </div>
 </section>
 
-<footer>© 2026 NOOR ASSOCIATES | Gulistan-e-Johar, Karachi</footer>
+<footer>
+    <p>© 2026 NOOR ASSOCIATES | All Rights Reserved</p>
+    <p style="font-size: 0.7rem; color: #555;">Design & Managed by Noor Associates Tech Team</p>
+</footer>
 
 <script>
 function sendInquiry() {
@@ -108,11 +264,22 @@ function sendInquiry() {
     const p = document.getElementById('phone').value;
     const m = document.getElementById('msg').value;
     const target = document.getElementById('targetWa').value;
-    if(n==""||p==""){alert("Please fill details!"); return;}
-    const text = `*Website Inquiry*%0A*Client:* ${n}%0A*Phone:* ${p}%0A*Query:* ${m}`;
+    
+    if(n == "" || p == ""){
+        alert("Please enter your name and phone number!");
+        return;
+    }
+    
+    const text = `*New Website Inquiry*%0A--------------------------%0A*Client:* ${n}%0A*Phone:* ${p}%0A*Service:* ${m}%0A--------------------------%0A_Sent from NoorAssociates.com_`;
+    
     window.open(`https://wa.me/${target}?text=${text}`, '_blank');
 }
 </script>
 
 </body>
-</html>
+</html>"""
+
+with open("noor_associates_updated.html", "w") as f:
+    f.write(html_content)
+
+print("File updated successfully.")
